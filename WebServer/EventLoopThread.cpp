@@ -10,7 +10,7 @@ EventLoopThread::EventLoopThread()
       mutex_(),
       cond_(mutex_) {}
 
-EventLoopThread::~EventLoopThread() {
+EventLoopThread::~EventLoopThread() {   //
   exiting_ = true;
   if (loop_ != NULL) {
     loop_->quit();
@@ -18,7 +18,7 @@ EventLoopThread::~EventLoopThread() {
   }
 }
 
-EventLoop* EventLoopThread::startLoop() {
+EventLoop* EventLoopThread::startLoop() {   //
   assert(!thread_.started());
   thread_.start();
   {
@@ -29,7 +29,7 @@ EventLoop* EventLoopThread::startLoop() {
   return loop_;
 }
 
-void EventLoopThread::threadFunc() {
+void EventLoopThread::threadFunc() {    //
   EventLoop loop;
 
   {

@@ -20,7 +20,7 @@ Channel::Channel(EventLoop *loop)
 Channel::Channel(EventLoop *loop, int fd)
     : loop_(loop), fd_(fd), events_(0), lastEvents_(0) {}
 
-Channel::~Channel() {
+Channel::~Channel() {	//
   // loop_->poller_->epoll_del(fd, events_);
   // close(fd_);
 }
@@ -28,19 +28,19 @@ Channel::~Channel() {
 int Channel::getFd() { return fd_; }
 void Channel::setFd(int fd) { fd_ = fd; }
 
-void Channel::handleRead() {
+void Channel::handleRead() {	//
   if (readHandler_) {
     readHandler_();
   }
 }
 
-void Channel::handleWrite() {
+void Channel::handleWrite() {	//
   if (writeHandler_) {
     writeHandler_();
   }
 }
 
-void Channel::handleConn() {
+void Channel::handleConn() {	//
   if (connHandler_) {
     connHandler_();
   }

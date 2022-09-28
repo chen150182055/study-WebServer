@@ -84,7 +84,7 @@ char favicon[555] = {
     'N',    'D',    '\xAE', 'B',    '\x60', '\x82',
 };
 
-void MimeType::init() {
+void MimeType::init() {   //
   mime[".html"] = "text/html";
   mime[".avi"] = "video/x-msvideo";
   mime[".bmp"] = "image/bmp";
@@ -101,7 +101,7 @@ void MimeType::init() {
   mime["default"] = "text/html";
 }
 
-std::string MimeType::getMime(const std::string &suffix) {
+std::string MimeType::getMime(const std::string &suffix) {    //
   pthread_once(&once_control, MimeType::init);
   if (mime.find(suffix) == mime.end())
     return mime["default"];
@@ -120,14 +120,14 @@ HttpData::HttpData(EventLoop *loop, int connfd)
       nowReadPos_(0),
       state_(STATE_PARSE_URI),
       hState_(H_START),
-      keepAlive_(false) {
+      keepAlive_(false) {   //构造函数
   // loop_->queueInLoop(bind(&HttpData::setHandlers, this));
   channel_->setReadHandler(bind(&HttpData::handleRead, this));
   channel_->setWriteHandler(bind(&HttpData::handleWrite, this));
   channel_->setConnHandler(bind(&HttpData::handleConn, this));
 }
 
-void HttpData::reset() {
+void HttpData::reset() {    //
   // inBuffer_.clear();
   fileName_.clear();
   path_.clear();
@@ -143,7 +143,7 @@ void HttpData::reset() {
   }
 }
 
-void HttpData::seperateTimer() {
+void HttpData::seperateTimer() {    //
   // cout << "seperateTimer" << endl;
   if (timer_.lock()) {
     shared_ptr<TimerNode> my_timer(timer_.lock());
@@ -152,7 +152,7 @@ void HttpData::seperateTimer() {
   }
 }
 
-void HttpData::handleRead() {
+void HttpData::handleRead() {   //
   __uint32_t &events_ = channel_->getEvents();
   do {
     bool zero = false;
@@ -267,7 +267,7 @@ void HttpData::handleRead() {
   }
 }
 
-void HttpData::handleWrite() {
+void HttpData::handleWrite() {    //
   if (!error_ && connectionState_ != H_DISCONNECTED) {
     __uint32_t &events_ = channel_->getEvents();
     if (writen(fd_, outBuffer_) < 0) {
@@ -279,7 +279,7 @@ void HttpData::handleWrite() {
   }
 }
 
-void HttpData::handleConn() {
+void HttpData::handleConn() {   //
   seperateTimer();
   __uint32_t &events_ = channel_->getEvents();
   if (!error_ && connectionState_ == H_CONNECTED) {
@@ -317,7 +317,7 @@ void HttpData::handleConn() {
   }
 }
 
-URIState HttpData::parseURI() {
+URIState HttpData::parseURI() {   //
   string &str = inBuffer_;
   string cop = str;
   // 读到完整的请求行再开始解析请求
@@ -394,7 +394,7 @@ URIState HttpData::parseURI() {
   return PARSE_URI_SUCCESS;
 }
 
-HeaderState HttpData::parseHeaders() {
+HeaderState HttpData::parseHeaders() {    //
   string &str = inBuffer_;
   int key_start = -1, key_end = -1, value_start = -1, value_end = -1;
   int now_read_line_begin = 0;
@@ -482,7 +482,7 @@ HeaderState HttpData::parseHeaders() {
   return PARSE_HEADER_AGAIN;
 }
 
-AnalysisState HttpData::analysisRequest() {
+AnalysisState HttpData::analysisRequest() {   //
   if (method_ == METHOD_POST) {
     // ------------------------------------------------------
     // My CV stitching handler which requires OpenCV library
@@ -581,7 +581,7 @@ AnalysisState HttpData::analysisRequest() {
   return ANALYSIS_ERROR;
 }
 
-void HttpData::handleError(int fd, int err_num, string short_msg) {
+void HttpData::handleError(int fd, int err_num, string short_msg) {   //
   short_msg = " " + short_msg;
   char send_buff[4096];
   string body_buff, header_buff;
@@ -604,13 +604,13 @@ void HttpData::handleError(int fd, int err_num, string short_msg) {
   writen(fd, send_buff, strlen(send_buff));
 }
 
-void HttpData::handleClose() {
+void HttpData::handleClose() {    //
   connectionState_ = H_DISCONNECTED;
   shared_ptr<HttpData> guard(shared_from_this());
   loop_->removeFromPoller(channel_);
 }
 
-void HttpData::newEvent() {
+void HttpData::newEvent() {   //
   channel_->setEvents(DEFAULT_EVENT);
   loop_->addToPoller(channel_, DEFAULT_EXPIRED_TIME);
 }

@@ -18,7 +18,7 @@ int ThreadPool::shutdown = 0;
 int ThreadPool::started = 0;
 
 int ThreadPool::threadpool_create(int _thread_count, int _queue_size)
-{
+{   //
     bool err = false;
     do
     {
@@ -58,7 +58,7 @@ int ThreadPool::threadpool_create(int _thread_count, int _queue_size)
 }
 
 int ThreadPool::threadpool_add(std::shared_ptr<void> args, std::function<void(std::shared_ptr<void>)> fun)
-{
+{   //
     int next, err = 0;
     if(pthread_mutex_lock(&lock) != 0)
         return THREADPOOL_LOCK_FAILURE;
@@ -97,7 +97,7 @@ int ThreadPool::threadpool_add(std::shared_ptr<void> args, std::function<void(st
 
 
 int ThreadPool::threadpool_destroy(ShutDownOption shutdown_option)
-{
+{    //
     printf("Thread pool destroy !\n");
     int i, err = 0;
 
@@ -136,7 +136,7 @@ int ThreadPool::threadpool_destroy(ShutDownOption shutdown_option)
 }
 
 int ThreadPool::threadpool_free()
-{
+{		//
     if(started > 0)
         return -1;
     pthread_mutex_lock(&lock);
@@ -147,7 +147,7 @@ int ThreadPool::threadpool_free()
 
 
 void *ThreadPool::threadpool_thread(void *args)
-{
+{		//
     while (true)
     {
         ThreadPoolTask task;

@@ -6,29 +6,29 @@
 #include <queue>
 
 TimerNode::TimerNode(std::shared_ptr<HttpData> requestData, int timeout)
-    : deleted_(false), SPHttpData(requestData) {
+    : deleted_(false), SPHttpData(requestData) {    //构造函数,初始化一个timeval类型的结构变量。同时初始化两个类成员
   struct timeval now;
-  gettimeofday(&now, NULL);
+  gettimeofday(&now, NULL);	//获取当前时区和时间并填入now
   // 以毫秒计
-  expiredTime_ =
-      (((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000)) + timeout;
+  expiredTime_ =(((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000)) + timeout;
 }
 
-TimerNode::~TimerNode() {
-  if (SPHttpData) SPHttpData->handleClose();
+TimerNode::~TimerNode() {    //析构函数
+  if (SPHttpData)
+	SPHttpData->handleClose();
 }
 
 TimerNode::TimerNode(TimerNode &tn)
     : SPHttpData(tn.SPHttpData), expiredTime_(0) {}
 
-void TimerNode::update(int timeout) {
+void TimerNode::update(int timeout) {    //
   struct timeval now;
   gettimeofday(&now, NULL);
   expiredTime_ =
       (((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000)) + timeout;
 }
 
-bool TimerNode::isValid() {
+bool TimerNode::isValid() {		//
   struct timeval now;
   gettimeofday(&now, NULL);
   size_t temp = (((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000));
@@ -40,7 +40,7 @@ bool TimerNode::isValid() {
   }
 }
 
-void TimerNode::clearReq() {
+void TimerNode::clearReq() {	//
   SPHttpData.reset();
   this->setDeleted();
 }
@@ -49,7 +49,7 @@ TimerManager::TimerManager() {}
 
 TimerManager::~TimerManager() {}
 
-void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout) {
+void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout) {	//
   SPTimerNode new_node(new TimerNode(SPHttpData, timeout));
   timerNodeQueue.push(new_node);
   SPHttpData->linkTimer(new_node);
@@ -68,7 +68,7 @@ void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout) {
 就不用再重新申请RequestData节点了，这样可以继续重复利用前面的RequestData，减少了一次delete和一次new的时间。
 */
 
-void TimerManager::handleExpiredEvent() {
+void TimerManager::handleExpiredEvent() {	//
   // MutexLockGuard locker(lock);
   while (!timerNodeQueue.empty()) {
     SPTimerNode ptimer_now = timerNodeQueue.top();

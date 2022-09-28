@@ -36,11 +36,10 @@ void Server::start() {
 
 void Server::handNewConn() {
   struct sockaddr_in client_addr;
-  memset(&client_addr, 0, sizeof(struct sockaddr_in));
+  memset(&client_addr, 0, sizeof(struct sockaddr_in));   //初始化结构client_addr
   socklen_t client_addr_len = sizeof(client_addr);
   int accept_fd = 0;
-  while ((accept_fd = accept(listenFd_, (struct sockaddr *)&client_addr,
-                             &client_addr_len)) > 0) {
+  while ((accept_fd = accept(listenFd_, (struct sockaddr *)&client_addr,&client_addr_len)) > 0) {   //关键1,accept
     EventLoop *loop = eventLoopThreadPool_->getNextLoop();
     LOG << "New connection from " << inet_ntoa(client_addr.sin_addr) << ":"
         << ntohs(client_addr.sin_port);
@@ -56,7 +55,7 @@ void Server::handNewConn() {
     */
     // 限制服务器的最大并发连接数
     if (accept_fd >= MAXFDS) {
-      close(accept_fd);
+      close(accept_fd);    //close关闭连接
       continue;
     }
     // 设为非阻塞模式
