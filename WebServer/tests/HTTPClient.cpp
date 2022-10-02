@@ -24,7 +24,6 @@ using namespace std;
  static void handle_events(int epollfd,struct epoll_event *events,int num,int
  sockfd,char *buf);
  static void do_read(int epollfd,int fd,int sockfd,char *buf);
- static void do_read(int epollfd,int fd,int sockfd,char *buf);
  static void do_write(int epollfd,int fd,int sockfd,char *buf);
  static void add_event(int epollfd,int fd,int state);
  static void delete_event(int epollfd,int fd,int state);
@@ -41,7 +40,7 @@ int setSocketNonBlocking1(int fd) {
 int main(int argc, char *argv[]) {
   int sockfd;
   struct sockaddr_in servaddr;
-  sockfd = socket(AF_INET, SOCK_STREAM, 0);
+  sockfd = socket(AF_INET, SOCK_STREAM, 0);		//初始化连接
   bzero(&servaddr, sizeof(servaddr));
   servaddr.sin_family = AF_INET;
   servaddr.sin_port = htons(SERV_PORT);
@@ -50,7 +49,7 @@ int main(int argc, char *argv[]) {
   buff[0] = '\0';
   // 发空串
   const char *p = " ";
-  if (connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) == 0) {
+  if (connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) == 0) {	//连接服务器
     setSocketNonBlocking1(sockfd);
     cout << "1:" << endl;
     ssize_t n = write(sockfd, p, strlen(p));
@@ -59,7 +58,7 @@ int main(int argc, char *argv[]) {
     n = read(sockfd, buff, 4096);
     cout << "n=" << n << endl;
     printf("%s", buff);
-    close(sockfd);
+    close(sockfd);	//关闭连接
   } else {
     perror("err1");
   }
@@ -67,8 +66,8 @@ int main(int argc, char *argv[]) {
 
   // 发"GET  HTTP/1.1"
   p = "GET  HTTP/1.1";
-  sockfd = socket(AF_INET, SOCK_STREAM, 0);
-  if (connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) == 0) {
+  sockfd = socket(AF_INET, SOCK_STREAM, 0);  //初始化连接
+  if (connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) == 0) {	//连接服务器
     setSocketNonBlocking1(sockfd);
     cout << "2:" << endl;
     ssize_t n = write(sockfd, p, strlen(p));

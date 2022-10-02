@@ -9,14 +9,14 @@
 #include <unordered_map>
 #include "Timer.h"
 
-class EventLoop;
-class HttpData;
+class EventLoop;    //声明EventLoop
+class HttpData;        //声明HttpData
 
-class Channel {
- private:
-  typedef std::function<void()> CallBack;
-  EventLoop *loop_;
-  int fd_;
+class Channel {        //定义Channel类
+ private:            //私有成员
+  typedef std::function<void()> CallBack;    //
+  EventLoop *loop_;        //一个指向EventLoop对象的指针
+  int fd_;                //描述符
   __uint32_t events_;
   __uint32_t revents_;
   __uint32_t lastEvents_;
@@ -34,46 +34,47 @@ class Channel {
   CallBack errorHandler_;
   CallBack connHandler_;
 
- public:
-  Channel(EventLoop *loop);
-  Channel(EventLoop *loop, int fd);
-  ~Channel();
-  int getFd();
-  void setFd(int fd);
+ public:            //共有成员
+  Channel(EventLoop *loop);        //构造函数01
+  Channel(EventLoop *loop, int fd);    //构造函数02
+  ~Channel();                    //析构函数
+  int getFd();                    //获取描述符函数
+  void setFd(int fd);            //设置描述符函数
 
-  void setHolder(std::shared_ptr<HttpData> holder) { holder_ = holder; }
+  void setHolder(std::shared_ptr<HttpData> holder) { holder_ = holder; }	//在类内部定义,inline
+
   std::shared_ptr<HttpData> getHolder() {
-    std::shared_ptr<HttpData> ret(holder_.lock());
-    return ret;
+	std::shared_ptr<HttpData> ret(holder_.lock());
+	return ret;
   }
 
   void setReadHandler(CallBack &&readHandler) { readHandler_ = readHandler; }
   void setWriteHandler(CallBack &&writeHandler) {
-    writeHandler_ = writeHandler;
+	writeHandler_ = writeHandler;
   }
   void setErrorHandler(CallBack &&errorHandler) {
-    errorHandler_ = errorHandler;
+	errorHandler_ = errorHandler;
   }
   void setConnHandler(CallBack &&connHandler) { connHandler_ = connHandler; }
 
   void handleEvents() {
-    events_ = 0;
-    if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN)) {
-      events_ = 0;
-      return;
-    }
-    if (revents_ & EPOLLERR) {
-      if (errorHandler_) errorHandler_();
-      events_ = 0;
-      return;
-    }
-    if (revents_ & (EPOLLIN | EPOLLPRI | EPOLLRDHUP)) {
-      handleRead();
-    }
-    if (revents_ & EPOLLOUT) {
-      handleWrite();
-    }
-    handleConn();
+	events_ = 0;
+	if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN)) {
+	  events_ = 0;
+	  return;
+	}
+	if (revents_ & EPOLLERR) {
+	  if (errorHandler_) errorHandler_();
+	  events_ = 0;
+	  return;
+	}
+	if (revents_ & (EPOLLIN | EPOLLPRI | EPOLLRDHUP)) {
+	  handleRead();
+	}
+	if (revents_ & EPOLLOUT) {
+	  handleWrite();
+	}
+	handleConn();
   }
   void handleRead();
   void handleWrite();
@@ -86,9 +87,9 @@ class Channel {
   __uint32_t &getEvents() { return events_; }
 
   bool EqualAndUpdateLastEvents() {
-    bool ret = (lastEvents_ == events_);
-    lastEvents_ = events_;
-    return ret;
+	bool ret = (lastEvents_ == events_);
+	lastEvents_ = events_;
+	return ret;
   }
 
   __uint32_t getLastEvents() { return lastEvents_; }

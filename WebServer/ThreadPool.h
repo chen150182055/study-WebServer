@@ -19,39 +19,35 @@ const int THREADPOOL_GRACEFUL = 1;
 const int MAX_THREADS = 1024;
 const int MAX_QUEUE = 65535;
 
-typedef enum
-{
-    immediate_shutdown = 1,
-    graceful_shutdown  = 2
+typedef enum {
+  immediate_shutdown = 1,
+  graceful_shutdown = 2
 } ShutDownOption;
 
-struct ThreadPoolTask
-{
-    std::function<void(std::shared_ptr<void>)> fun;
-    std::shared_ptr<void> args;
+struct ThreadPoolTask {
+  std::function<void(std::shared_ptr<void>)> fun;
+  std::shared_ptr<void> args;
 };
 
+class ThreadPool { 	//定义ThreadPool类
+ private:
+  static pthread_mutex_t lock;		//静态成员
+  static pthread_cond_t notify;		//静态成员
 
-class ThreadPool
-{
-private:
-    static pthread_mutex_t lock;
-    static pthread_cond_t notify;
-
-    static std::vector<pthread_t> threads;
-    static std::vector<ThreadPoolTask> queue;
-    static int thread_count;
-    static int queue_size;
-    static int head;
-    // tail 指向尾节点的下一节点
-    static int tail;
-    static int count;
-    static int shutdown;
-    static int started;
-public:
-    static int threadpool_create(int _thread_count, int _queue_size);
-    static int threadpool_add(std::shared_ptr<void> args, std::function<void(std::shared_ptr<void>)> fun);
-    static int threadpool_destroy(ShutDownOption shutdown_option = graceful_shutdown);
-    static int threadpool_free();
-    static void *threadpool_thread(void *args);
+  static std::vector<pthread_t> threads;	//静态成员
+  static std::vector<ThreadPoolTask> queue;	//静态成员
+  static int thread_count;	//静态成员
+  static int queue_size;	//静态成员
+  static int head;			//静态成员
+  // tail 指向尾节点的下一节点
+  static int tail;		//静态成员
+  static int count;		//静态成员
+  static int shutdown;	//静态成员
+  static int started;	//静态成员
+ public:
+  static int threadpool_create(int _thread_count, int _queue_size);										//静态成员
+  static int threadpool_add(std::shared_ptr<void> args, std::function<void(std::shared_ptr<void>)> fun);//静态成员
+  static int threadpool_destroy(ShutDownOption shutdown_option = graceful_shutdown);					//静态成员
+  static int threadpool_free();					//静态成员
+  static void *threadpool_thread(void *args);	//静态成员
 };

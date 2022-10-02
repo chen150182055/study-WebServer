@@ -11,6 +11,7 @@ const int kSmallBuffer = 4000;
 const int kLargeBuffer = 4000 * 1000;
 
 template <int SIZE>
+
 class FixedBuffer : noncopyable {
  public:
   FixedBuffer() : cur_(data_) {}
@@ -41,6 +42,7 @@ class FixedBuffer : noncopyable {
   char* cur_;
 };
 
+//该类用来格式化输出,重载了<<运算符
 class LogStream : noncopyable {
  public:
   typedef FixedBuffer<kSmallBuffer> Buffer;

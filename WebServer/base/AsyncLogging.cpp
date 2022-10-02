@@ -7,6 +7,11 @@
 #include <functional>
 #include "LogFile.h"
 
+/**
+ *
+ * @param logFileName_
+ * @param flushInterval
+ */
 AsyncLogging::AsyncLogging(std::string logFileName_, int flushInterval)
     : flushInterval_(flushInterval),
       running_(false),
@@ -24,6 +29,11 @@ AsyncLogging::AsyncLogging(std::string logFileName_, int flushInterval)
   buffers_.reserve(16);
 }
 
+/**
+ *
+ * @param logline
+ * @param len
+ */
 void AsyncLogging::append(const char* logline, int len) {
   MutexLockGuard lock(mutex_);
   if (currentBuffer_->avail() > len)
@@ -40,6 +50,9 @@ void AsyncLogging::append(const char* logline, int len) {
   }
 }
 
+/**
+ *
+ */
 void AsyncLogging::threadFunc() {
   assert(running_ == true);
   latch_.countDown();

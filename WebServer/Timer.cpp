@@ -5,6 +5,11 @@
 #include <unistd.h>
 #include <queue>
 
+/**
+ *
+ * @param requestData
+ * @param timeout
+ */
 TimerNode::TimerNode(std::shared_ptr<HttpData> requestData, int timeout)
     : deleted_(false), SPHttpData(requestData) {    //构造函数,初始化一个timeval类型的结构变量。同时初始化两个类成员
   struct timeval now;
@@ -13,14 +18,25 @@ TimerNode::TimerNode(std::shared_ptr<HttpData> requestData, int timeout)
   expiredTime_ =(((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000)) + timeout;
 }
 
+/**
+ *
+ */
 TimerNode::~TimerNode() {    //析构函数
   if (SPHttpData)
 	SPHttpData->handleClose();
 }
 
+/**
+ *
+ * @param tn
+ */
 TimerNode::TimerNode(TimerNode &tn)
     : SPHttpData(tn.SPHttpData), expiredTime_(0) {}
 
+/**
+ *
+ * @param timeout
+ */
 void TimerNode::update(int timeout) {    //
   struct timeval now;
   gettimeofday(&now, NULL);
@@ -28,6 +44,10 @@ void TimerNode::update(int timeout) {    //
       (((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000)) + timeout;
 }
 
+/**
+ *
+ * @return
+ */
 bool TimerNode::isValid() {		//
   struct timeval now;
   gettimeofday(&now, NULL);
@@ -40,15 +60,29 @@ bool TimerNode::isValid() {		//
   }
 }
 
+/**
+ *
+ */
 void TimerNode::clearReq() {	//
   SPHttpData.reset();
   this->setDeleted();
 }
 
+/**
+ *
+ */
 TimerManager::TimerManager() {}
 
+/**
+ *
+ */
 TimerManager::~TimerManager() {}
 
+/**
+ *
+ * @param SPHttpData
+ * @param timeout
+ */
 void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout) {	//
   SPTimerNode new_node(new TimerNode(SPHttpData, timeout));
   timerNodeQueue.push(new_node);
@@ -68,6 +102,9 @@ void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout) {
 就不用再重新申请RequestData节点了，这样可以继续重复利用前面的RequestData，减少了一次delete和一次new的时间。
 */
 
+/**
+ *
+ */
 void TimerManager::handleExpiredEvent() {	//
   // MutexLockGuard locker(lock);
   while (!timerNodeQueue.empty()) {

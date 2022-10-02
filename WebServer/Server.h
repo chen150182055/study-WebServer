@@ -6,10 +6,10 @@
 #include "EventLoop.h"
 #include "EventLoopThreadPool.h"
 
-class Server {
+class Server {		//定义Server类
  public:
-  Server(EventLoop *loop, int threadNum, int port);
-  ~Server() {}
+  Server(EventLoop *loop, int threadNum, int port);	//构造函数
+  ~Server() {}		//析构函数
   EventLoop *getLoop() const { return loop_; }
   void start();
   void handNewConn();
@@ -23,5 +23,5 @@ class Server {
   std::shared_ptr<Channel> acceptChannel_;
   int port_;
   int listenFd_;
-  static const int MAXFDS = 100000;
+  static const int MAXFDS = 100000;		//静态成员,使用常量表达式进行初始化
 };

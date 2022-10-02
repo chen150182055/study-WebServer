@@ -1,6 +1,6 @@
 // @Author Lin Ya
 // @Email xxbbb@vip.qq.com
-#pragma once
+#pragma once	//避免同一个头文件被包含（include）多次
 #include <memory>
 #include <vector>
 #include "EventLoopThread.h"
@@ -10,12 +10,13 @@
 
 class EventLoopThreadPool : noncopyable {
  public:
-  EventLoopThreadPool(EventLoop* baseLoop, int numThreads);
+  EventLoopThreadPool(EventLoop* baseLoop, int numThreads);	//构造函数声明
 
-  ~EventLoopThreadPool() { LOG << "~EventLoopThreadPool()"; }
-  void start();
+  ~EventLoopThreadPool() { LOG << "~EventLoopThreadPool()"; }	//析构函数声明
 
-  EventLoop* getNextLoop();
+  void start();	//成员函数start
+
+  EventLoop* getNextLoop();	//成员函数getNextLoop
 
  private:
   EventLoop* baseLoop_;

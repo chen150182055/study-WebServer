@@ -10,16 +10,16 @@
 #include "CountDownLatch.h"
 #include "noncopyable.h"
 
-class Thread : noncopyable {
+class Thread : noncopyable {    //定义Thread类
  public:
   typedef std::function<void()> ThreadFunc;
-  explicit Thread(const ThreadFunc&, const std::string& name = std::string());
+  explicit Thread(const ThreadFunc &, const std::string &name = std::string());        //构造函数
   ~Thread();
   void start();
   int join();
   bool started() const { return started_; }
   pid_t tid() const { return tid_; }
-  const std::string& name() const { return name_; }
+  const std::string &name() const { return name_; }
 
  private:
   void setDefaultName();

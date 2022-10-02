@@ -4,7 +4,9 @@
 #include <string>
 #include "noncopyable.h"
 
-
+/**
+ * 最底层的文件类,封装log文件的打开、写入等
+ */
 class AppendFile : noncopyable {
  public:
   explicit AppendFile(std::string filename);

@@ -7,9 +7,9 @@
 #include <string>
 #include "LogStream.h"
 
-
 class AsyncLogging;
 
+//对外接口
 class Logger {
  public:
   Logger(const char *fileName, int line);
@@ -22,12 +22,12 @@ class Logger {
  private:
   class Impl {
    public:
-    Impl(const char *fileName, int line);
-    void formatTime();
+	Impl(const char *fileName, int line);
+	void formatTime();
 
-    LogStream stream_;
-    int line_;
-    std::string basename_;
+	LogStream stream_;
+	int line_;
+	std::string basename_;
   };
   Impl impl_;
   static std::string logFileName_;

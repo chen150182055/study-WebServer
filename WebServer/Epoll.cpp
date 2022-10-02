@@ -22,11 +22,23 @@ const int EPOLLWAIT_TIME = 10000;
 
 typedef shared_ptr<Channel> SP_Channel;
 
+/**
+ *
+ */
 Epoll::Epoll() : epollFd_(epoll_create1(EPOLL_CLOEXEC)), events_(EVENTSNUM) {	//
   assert(epollFd_ > 0);
 }
+
+/**
+ *
+ */
 Epoll::~Epoll() {}
 
+/**
+ *
+ * @param request
+ * @param timeout
+ */
 // 注册新描述符
 void Epoll::epoll_add(SP_Channel request, int timeout) {	//
   int fd = request->getFd();
@@ -47,6 +59,11 @@ void Epoll::epoll_add(SP_Channel request, int timeout) {	//
   }
 }
 
+/**
+ *
+ * @param request
+ * @param timeout
+ */
 // 修改描述符状态
 void Epoll::epoll_mod(SP_Channel request, int timeout) {	//
   if (timeout > 0) add_timer(request, timeout);
@@ -62,6 +79,10 @@ void Epoll::epoll_mod(SP_Channel request, int timeout) {	//
   }
 }
 
+/**
+ *
+ * @param request
+ */
 // 从epoll中删除描述符
 void Epoll::epoll_del(SP_Channel request) {		//
   int fd = request->getFd();
@@ -77,6 +98,10 @@ void Epoll::epoll_del(SP_Channel request) {		//
   fd2http_[fd].reset();
 }
 
+/**
+ *
+ * @return
+ */
 // 返回活跃事件数
 std::vector<SP_Channel> Epoll::poll() {		//
   while (true) {
@@ -88,8 +113,16 @@ std::vector<SP_Channel> Epoll::poll() {		//
   }
 }
 
+/**
+ *
+ */
 void Epoll::handleExpired() { timerManager_.handleExpiredEvent(); }		//
 
+/**
+ *
+ * @param events_num
+ * @return
+ */
 // 分发处理函数
 std::vector<SP_Channel> Epoll::getEventsRequest(int events_num) {		//
   std::vector<SP_Channel> req_data;
@@ -112,6 +145,11 @@ std::vector<SP_Channel> Epoll::getEventsRequest(int events_num) {		//
   return req_data;
 }
 
+/**
+ *
+ * @param request_data
+ * @param timeout
+ */
 void Epoll::add_timer(SP_Channel request_data, int timeout) {		//
   shared_ptr<HttpData> t = request_data->getHolder();
   if (t)

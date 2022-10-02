@@ -3,14 +3,20 @@
 #include "EventLoopThread.h"
 #include <functional>
 
+/**
+ *
+ */
 EventLoopThread::EventLoopThread()
     : loop_(NULL),
       exiting_(false),
       thread_(bind(&EventLoopThread::threadFunc, this), "EventLoopThread"),
       mutex_(),
-      cond_(mutex_) {}
+      cond_(mutex_) {}	//构造函数的定义,初始化成员
 
-EventLoopThread::~EventLoopThread() {   //
+/**
+ *
+ */
+EventLoopThread::~EventLoopThread() {   //构造函数的定义,成员初始化
   exiting_ = true;
   if (loop_ != NULL) {
     loop_->quit();
@@ -18,6 +24,10 @@ EventLoopThread::~EventLoopThread() {   //
   }
 }
 
+/**
+ *
+ * @return
+ */
 EventLoop* EventLoopThread::startLoop() {   //
   assert(!thread_.started());
   thread_.start();
@@ -29,6 +39,9 @@ EventLoop* EventLoopThread::startLoop() {   //
   return loop_;
 }
 
+/**
+ *
+ */
 void EventLoopThread::threadFunc() {    //
   EventLoop loop;
 

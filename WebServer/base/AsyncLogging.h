@@ -10,7 +10,7 @@
 #include "Thread.h"
 #include "noncopyable.h"
 
-
+//核心类,启动一个log线程，专门用来将log写入LogFile
 class AsyncLogging : noncopyable {
  public:
   AsyncLogging(const std::string basename, int flushInterval = 2);

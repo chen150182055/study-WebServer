@@ -13,7 +13,14 @@
 
 
 const int MAX_BUFF = 4096;
-ssize_t readn(int fd, void *buff, size_t n) {	//
+/**
+ *
+ * @param fd
+ * @param buff
+ * @param n
+ * @return
+ */
+ssize_t readn(int fd, void *buff, size_t n) {		//
   size_t nleft = n;
   ssize_t nread = 0;
   ssize_t readSum = 0;
@@ -36,7 +43,14 @@ ssize_t readn(int fd, void *buff, size_t n) {	//
   return readSum;
 }
 
-ssize_t readn(int fd, std::string &inBuffer, bool &zero) {
+/**
+ *
+ * @param fd
+ * @param inBuffer
+ * @param zero
+ * @return
+ */
+ssize_t readn(int fd, std::string &inBuffer, bool &zero) {		//
   ssize_t nread = 0;
   ssize_t readSum = 0;
   while (true) {
@@ -65,7 +79,13 @@ ssize_t readn(int fd, std::string &inBuffer, bool &zero) {
   return readSum;
 }
 
-ssize_t readn(int fd, std::string &inBuffer) {
+/**
+ *
+ * @param fd
+ * @param inBuffer
+ * @return
+ */
+ssize_t readn(int fd, std::string &inBuffer) {		//
   ssize_t nread = 0;
   ssize_t readSum = 0;
   while (true) {
@@ -93,7 +113,14 @@ ssize_t readn(int fd, std::string &inBuffer) {
   return readSum;
 }
 
-ssize_t writen(int fd, void *buff, size_t n) {
+/**
+ *
+ * @param fd
+ * @param buff
+ * @param n
+ * @return
+ */
+ssize_t writen(int fd, void *buff, size_t n) {		//
   size_t nleft = n;
   ssize_t nwritten = 0;
   ssize_t writeSum = 0;
@@ -117,7 +144,13 @@ ssize_t writen(int fd, void *buff, size_t n) {
   return writeSum;
 }
 
-ssize_t writen(int fd, std::string &sbuff) {
+/**
+ *
+ * @param fd
+ * @param sbuff
+ * @return
+ */
+ssize_t writen(int fd, std::string &sbuff) {	//
   size_t nleft = sbuff.size();
   ssize_t nwritten = 0;
   ssize_t writeSum = 0;
@@ -145,7 +178,10 @@ ssize_t writen(int fd, std::string &sbuff) {
   return writeSum;
 }
 
-void handle_for_sigpipe() {
+/**
+ *
+ */
+void handle_for_sigpipe() {		//
   struct sigaction sa;
   memset(&sa, '\0', sizeof(sa));
   sa.sa_handler = SIG_IGN;
@@ -153,7 +189,12 @@ void handle_for_sigpipe() {
   if (sigaction(SIGPIPE, &sa, NULL)) return;
 }
 
-int setSocketNonBlocking(int fd) {
+/**
+ *
+ * @param fd
+ * @return
+ */
+int setSocketNonBlocking(int fd) {		//
   int flag = fcntl(fd, F_GETFL, 0);
   if (flag == -1) return -1;
 
@@ -162,12 +203,20 @@ int setSocketNonBlocking(int fd) {
   return 0;
 }
 
-void setSocketNodelay(int fd) {
+/**
+ *
+ * @param fd
+ */
+void setSocketNodelay(int fd) {		//
   int enable = 1;
   setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (void *)&enable, sizeof(enable));
 }
 
-void setSocketNoLinger(int fd) {
+/**
+ *
+ * @param fd
+ */
+void setSocketNoLinger(int fd) {		//
   struct linger linger_;
   linger_.l_onoff = 1;
   linger_.l_linger = 30;
@@ -175,12 +224,21 @@ void setSocketNoLinger(int fd) {
              sizeof(linger_));
 }
 
-void shutDownWR(int fd) {
+/**
+ *
+ * @param fd
+ */
+void shutDownWR(int fd) {		//
   shutdown(fd, SHUT_WR);
   // printf("shutdown\n");
 }
 
-int socket_bind_listen(int port) {
+/**
+ *
+ * @param port
+ * @return
+ */
+int socket_bind_listen(int port) {		//
   // 检查port值，取正确区间范围
   if (port < 0 || port > 65535) return -1;
 

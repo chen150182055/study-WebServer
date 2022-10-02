@@ -14,34 +14,63 @@
 
 using namespace std;
 
-Channel::Channel(EventLoop *loop)
-    : loop_(loop), events_(0), lastEvents_(0), fd_(0) {}
+/**
+ *
+ * @param loop
+ */
+Channel::Channel(EventLoop *loop): loop_(loop), events_(0), lastEvents_(0), fd_(0) {}	//构造函数定义,初始化成员.传入一个指针变量类型的参数
 
-Channel::Channel(EventLoop *loop, int fd)
-    : loop_(loop), fd_(fd), events_(0), lastEvents_(0) {}
 
-Channel::~Channel() {	//
+/**
+ *
+ * @param loop
+ * @param fd
+ */
+Channel::Channel(EventLoop *loop, int fd): loop_(loop), fd_(fd), events_(0), lastEvents_(0) {}	//构造函数定义
+
+/**
+ * 析构函数
+ */
+Channel::~Channel() {    //析构函数的定义
   // loop_->poller_->epoll_del(fd, events_);
   // close(fd_);
 }
 
+/**
+ *
+ * @return
+ */
 int Channel::getFd() { return fd_; }
+
+/**
+ *
+ * @param fd
+ */
 void Channel::setFd(int fd) { fd_ = fd; }
 
-void Channel::handleRead() {	//
+/**
+ *
+ */
+void Channel::handleRead() {    //
   if (readHandler_) {
-    readHandler_();
+	readHandler_();
   }
 }
 
-void Channel::handleWrite() {	//
+/**
+ *
+ */
+void Channel::handleWrite() {    //
   if (writeHandler_) {
-    writeHandler_();
+	writeHandler_();
   }
 }
 
-void Channel::handleConn() {	//
+/**
+ *
+ */
+void Channel::handleConn() {    //
   if (connHandler_) {
-    connHandler_();
+	connHandler_();
   }
 }

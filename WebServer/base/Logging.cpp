@@ -15,18 +15,31 @@ static AsyncLogging *AsyncLogger_;
 
 std::string Logger::logFileName_ = "./WebServer.log";
 
+/**
+ *
+ */
 void once_init()
 {
     AsyncLogger_ = new AsyncLogging(Logger::getLogFileName());
     AsyncLogger_->start(); 
 }
 
+/**
+ *
+ * @param msg
+ * @param len
+ */
 void output(const char* msg, int len)
 {
     pthread_once(&once_control_, once_init);
     AsyncLogger_->append(msg, len);
 }
 
+/**
+ *
+ * @param fileName
+ * @param line
+ */
 Logger::Impl::Impl(const char *fileName, int line)
   : stream_(),
     line_(line),
@@ -35,6 +48,9 @@ Logger::Impl::Impl(const char *fileName, int line)
     formatTime();
 }
 
+/**
+ *
+ */
 void Logger::Impl::formatTime()
 {
     struct timeval tv;
@@ -47,10 +63,18 @@ void Logger::Impl::formatTime()
     stream_ << str_t;
 }
 
+/**
+ *
+ * @param fileName
+ * @param line
+ */
 Logger::Logger(const char *fileName, int line)
   : impl_(fileName, line)
 { }
 
+/**
+ *
+ */
 Logger::~Logger()
 {
     impl_.stream_ << " -- " << impl_.basename_ << ':' << impl_.line_ << '\n';

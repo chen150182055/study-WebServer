@@ -10,7 +10,7 @@
 #include "Timer.h"
 
 
-class Epoll {
+class Epoll {	//定义Epoll类
  public:
   Epoll();
   ~Epoll();
@@ -24,7 +24,7 @@ class Epoll {
   void handleExpired();
 
  private:
-  static const int MAXFDS = 100000;
+  static const int MAXFDS = 100000;		//静态成员,在类内部使用常量表达式进行初始化
   int epollFd_;
   std::vector<epoll_event> events_;
   std::shared_ptr<Channel> fd2chan_[MAXFDS];

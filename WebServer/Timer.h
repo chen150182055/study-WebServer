@@ -10,9 +10,9 @@
 #include "base/noncopyable.h"
 
 
-class HttpData;
+class HttpData;		//声明HttpData类使其可见
 
-class TimerNode {
+class TimerNode {		//定义TimerNode类
  public:
   TimerNode(std::shared_ptr<HttpData> requestData, int timeout);
   ~TimerNode();
@@ -30,14 +30,14 @@ class TimerNode {
   std::shared_ptr<HttpData> SPHttpData;
 };
 
-struct TimerCmp {
+struct TimerCmp {			//定义TimerCmp类
   bool operator()(std::shared_ptr<TimerNode> &a,
                   std::shared_ptr<TimerNode> &b) const {
     return a->getExpTime() > b->getExpTime();
   }
 };
 
-class TimerManager {
+class TimerManager {		//定义TimerManager类
  public:
   TimerManager();
   ~TimerManager();

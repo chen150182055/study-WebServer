@@ -55,21 +55,21 @@ enum HttpMethod { METHOD_POST = 1, METHOD_GET, METHOD_HEAD };
 
 enum HttpVersion { HTTP_10 = 1, HTTP_11 };
 
-class MimeType {
+class MimeType {	//定义MimeType类
  private:
-  static void init();
-  static std::unordered_map<std::string, std::string> mime;
-  MimeType();
-  MimeType(const MimeType &m);
+  static void init();	//静态成员
+  static std::unordered_map<std::string, std::string> mime;	//静态成员
+  MimeType();	//构造函数
+  MimeType(const MimeType &m);	//构造函数
 
  public:
   static std::string getMime(const std::string &suffix);
 
  private:
-  static pthread_once_t once_control;
+  static pthread_once_t once_control;	//静态成员
 };
 
-class HttpData : public std::enable_shared_from_this<HttpData> {
+class HttpData : public std::enable_shared_from_this<HttpData> {	//定义HttpData类
  public:
   HttpData(EventLoop *loop, int connfd);
   ~HttpData() { close(fd_); }

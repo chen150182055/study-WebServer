@@ -84,6 +84,9 @@ char favicon[555] = {
     'N',    'D',    '\xAE', 'B',    '\x60', '\x82',
 };
 
+/**
+ *
+ */
 void MimeType::init() {   //
   mime[".html"] = "text/html";
   mime[".avi"] = "video/x-msvideo";
@@ -101,6 +104,11 @@ void MimeType::init() {   //
   mime["default"] = "text/html";
 }
 
+/**
+ *
+ * @param suffix
+ * @return
+ */
 std::string MimeType::getMime(const std::string &suffix) {    //
   pthread_once(&once_control, MimeType::init);
   if (mime.find(suffix) == mime.end())
@@ -109,6 +117,11 @@ std::string MimeType::getMime(const std::string &suffix) {    //
     return mime[suffix];
 }
 
+/**
+ *
+ * @param loop
+ * @param connfd
+ */
 HttpData::HttpData(EventLoop *loop, int connfd)
     : loop_(loop),
       channel_(new Channel(loop, connfd)),
@@ -127,6 +140,9 @@ HttpData::HttpData(EventLoop *loop, int connfd)
   channel_->setConnHandler(bind(&HttpData::handleConn, this));
 }
 
+/**
+ *
+ */
 void HttpData::reset() {    //
   // inBuffer_.clear();
   fileName_.clear();
@@ -143,6 +159,9 @@ void HttpData::reset() {    //
   }
 }
 
+/**
+ *
+ */
 void HttpData::seperateTimer() {    //
   // cout << "seperateTimer" << endl;
   if (timer_.lock()) {
@@ -152,6 +171,9 @@ void HttpData::seperateTimer() {    //
   }
 }
 
+/**
+ *
+ */
 void HttpData::handleRead() {   //
   __uint32_t &events_ = channel_->getEvents();
   do {
@@ -267,6 +289,9 @@ void HttpData::handleRead() {   //
   }
 }
 
+/**
+ *
+ */
 void HttpData::handleWrite() {    //
   if (!error_ && connectionState_ != H_DISCONNECTED) {
     __uint32_t &events_ = channel_->getEvents();
@@ -279,6 +304,9 @@ void HttpData::handleWrite() {    //
   }
 }
 
+/**
+ *
+ */
 void HttpData::handleConn() {   //
   seperateTimer();
   __uint32_t &events_ = channel_->getEvents();
@@ -317,6 +345,10 @@ void HttpData::handleConn() {   //
   }
 }
 
+/**
+ *
+ * @return
+ */
 URIState HttpData::parseURI() {   //
   string &str = inBuffer_;
   string cop = str;
@@ -394,6 +426,10 @@ URIState HttpData::parseURI() {   //
   return PARSE_URI_SUCCESS;
 }
 
+/**
+ *
+ * @return
+ */
 HeaderState HttpData::parseHeaders() {    //
   string &str = inBuffer_;
   int key_start = -1, key_end = -1, value_start = -1, value_end = -1;
@@ -482,6 +518,10 @@ HeaderState HttpData::parseHeaders() {    //
   return PARSE_HEADER_AGAIN;
 }
 
+/**
+ *
+ * @return
+ */
 AnalysisState HttpData::analysisRequest() {   //
   if (method_ == METHOD_POST) {
     // ------------------------------------------------------
@@ -581,6 +621,12 @@ AnalysisState HttpData::analysisRequest() {   //
   return ANALYSIS_ERROR;
 }
 
+/**
+ *
+ * @param fd
+ * @param err_num
+ * @param short_msg
+ */
 void HttpData::handleError(int fd, int err_num, string short_msg) {   //
   short_msg = " " + short_msg;
   char send_buff[4096];
@@ -604,12 +650,18 @@ void HttpData::handleError(int fd, int err_num, string short_msg) {   //
   writen(fd, send_buff, strlen(send_buff));
 }
 
+/**
+ *
+ */
 void HttpData::handleClose() {    //
   connectionState_ = H_DISCONNECTED;
   shared_ptr<HttpData> guard(shared_from_this());
   loop_->removeFromPoller(channel_);
 }
 
+/**
+ *
+ */
 void HttpData::newEvent() {   //
   channel_->setEvents(DEFAULT_EVENT);
   loop_->addToPoller(channel_, DEFAULT_EXPIRED_TIME);

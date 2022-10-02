@@ -17,6 +17,12 @@ int ThreadPool::count = 0;
 int ThreadPool::shutdown = 0;
 int ThreadPool::started = 0;
 
+/**
+ *
+ * @param _thread_count
+ * @param _queue_size
+ * @return
+ */
 int ThreadPool::threadpool_create(int _thread_count, int _queue_size)
 {   //
     bool err = false;
@@ -57,6 +63,12 @@ int ThreadPool::threadpool_create(int _thread_count, int _queue_size)
     return 0;
 }
 
+/**
+ *
+ * @param args
+ * @param fun
+ * @return
+ */
 int ThreadPool::threadpool_add(std::shared_ptr<void> args, std::function<void(std::shared_ptr<void>)> fun)
 {   //
     int next, err = 0;
@@ -95,7 +107,11 @@ int ThreadPool::threadpool_add(std::shared_ptr<void> args, std::function<void(st
     return err;
 }
 
-
+/**
+ *
+ * @param shutdown_option
+ * @return
+ */
 int ThreadPool::threadpool_destroy(ShutDownOption shutdown_option)
 {    //
     printf("Thread pool destroy !\n");
@@ -135,6 +151,10 @@ int ThreadPool::threadpool_destroy(ShutDownOption shutdown_option)
     return err;
 }
 
+/**
+ *
+ * @return
+ */
 int ThreadPool::threadpool_free()
 {		//
     if(started > 0)
@@ -145,7 +165,11 @@ int ThreadPool::threadpool_free()
     return 0;
 }
 
-
+/**
+ *
+ * @param args
+ * @return
+ */
 void *ThreadPool::threadpool_thread(void *args)
 {		//
     while (true)
