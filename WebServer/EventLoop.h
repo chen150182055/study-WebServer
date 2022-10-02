@@ -24,16 +24,47 @@ class EventLoop {
   void quit();
   void runInLoop(Functor&& cb);
   void queueInLoop(Functor&& cb);
-  bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }
-  void assertInLoopThread() { assert(isInLoopThread()); }
-  void shutdown(shared_ptr<Channel> channel) { shutDownWR(channel->getFd()); }
+  /**
+   *
+   * @return
+   */
+  bool isInLoopThread() const {
+	return threadId_ == CurrentThread::tid();
+  }
+  /**
+   *
+   */
+  void assertInLoopThread() {
+	assert(isInLoopThread());
+  }
+  /**
+   *
+   * @param channel
+   */
+  void shutdown(shared_ptr<Channel> channel) {
+	shutDownWR(channel->getFd());
+  }
+  /**
+   *
+   * @param channel
+   */
   void removeFromPoller(shared_ptr<Channel> channel) {
     // shutDownWR(channel->getFd());
     poller_->epoll_del(channel);
   }
+  /**
+   *
+   * @param channel
+   * @param timeout
+   */
   void updatePoller(shared_ptr<Channel> channel, int timeout = 0) {
     poller_->epoll_mod(channel, timeout);
   }
+  /**
+   *
+   * @param channel
+   * @param timeout
+   */
   void addToPoller(shared_ptr<Channel> channel, int timeout = 0) {
     poller_->epoll_add(channel, timeout);
   }

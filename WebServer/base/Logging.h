@@ -16,8 +16,21 @@ class Logger {
   ~Logger();
   LogStream &stream() { return impl_.stream_; }
 
-  static void setLogFileName(std::string fileName) { logFileName_ = fileName; }
-  static std::string getLogFileName() { return logFileName_; }
+  /**
+   * 将成员logFileName_的值设置为fileName
+   * @param fileName
+   */
+  static void setLogFileName(std::string fileName) {
+	logFileName_ = fileName;
+  }
+
+  /**
+   * 返回成员logFileName_的值
+   * @return
+   */
+  static std::string getLogFileName() {
+	return logFileName_;
+  }
 
  private:
   class Impl {
