@@ -41,22 +41,58 @@ class Channel {        //定义Channel类
   int getFd();                    //获取描述符函数
   void setFd(int fd);            //设置描述符函数
 
-  void setHolder(std::shared_ptr<HttpData> holder) { holder_ = holder; }	//在类内部定义,inline
+  /**
+   *
+   * @param holder
+   */
+  void setHolder(std::shared_ptr<HttpData> holder) {
+	holder_ = holder;
+  }
 
+  /**
+   *
+   * @return
+   */
   std::shared_ptr<HttpData> getHolder() {
 	std::shared_ptr<HttpData> ret(holder_.lock());
 	return ret;
   }
 
-  void setReadHandler(CallBack &&readHandler) { readHandler_ = readHandler; }
+  /**
+   *
+   * @param readHandler
+   */
+  void setReadHandler(CallBack &&readHandler) {
+	readHandler_ = readHandler;
+  }
+
+  /**
+   *
+   * @param writeHandler
+   */
   void setWriteHandler(CallBack &&writeHandler) {
 	writeHandler_ = writeHandler;
   }
+
+  /**
+   *
+   * @param errorHandler
+   */
   void setErrorHandler(CallBack &&errorHandler) {
 	errorHandler_ = errorHandler;
   }
-  void setConnHandler(CallBack &&connHandler) { connHandler_ = connHandler; }
 
+  /**
+   *
+   * @param connHandler
+   */
+  void setConnHandler(CallBack &&connHandler) {
+	connHandler_ = connHandler;
+  }
+
+  /**
+   *
+   */
   void handleEvents() {
 	events_ = 0;
 	if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN)) {
@@ -81,18 +117,45 @@ class Channel {        //定义Channel类
   void handleError(int fd, int err_num, std::string short_msg);
   void handleConn();
 
-  void setRevents(__uint32_t ev) { revents_ = ev; }
+  /**
+   *
+   * @param ev
+   */
+  void setRevents(__uint32_t ev) {
+	revents_ = ev;
+  }
 
-  void setEvents(__uint32_t ev) { events_ = ev; }
+  /**
+   *
+   * @param ev
+   */
+  void setEvents(__uint32_t ev) {
+	events_ = ev;
+  }
+
+  /**
+   *
+   * @return
+   */
   __uint32_t &getEvents() { return events_; }
 
+  /**
+   *
+   * @return
+   */
   bool EqualAndUpdateLastEvents() {
 	bool ret = (lastEvents_ == events_);
 	lastEvents_ = events_;
 	return ret;
   }
 
-  __uint32_t getLastEvents() { return lastEvents_; }
+  /**
+   *
+   * @return
+   */
+  __uint32_t getLastEvents() {
+	return lastEvents_;
+  }
 };
 
 typedef std::shared_ptr<Channel> SP_Channel;

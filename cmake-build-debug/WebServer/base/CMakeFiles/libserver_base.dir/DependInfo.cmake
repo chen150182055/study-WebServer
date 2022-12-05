@@ -8,13 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/d/ClionProject/C++/WebServer/WebServer/base/AsyncLogging.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/AsyncLogging.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/AsyncLogging.cpp.o.d"
-  "/mnt/d/ClionProject/C++/WebServer/WebServer/base/CountDownLatch.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/CountDownLatch.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/CountDownLatch.cpp.o.d"
-  "/mnt/d/ClionProject/C++/WebServer/WebServer/base/FileUtil.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/FileUtil.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/FileUtil.cpp.o.d"
-  "/mnt/d/ClionProject/C++/WebServer/WebServer/base/LogFile.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/LogFile.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/LogFile.cpp.o.d"
-  "/mnt/d/ClionProject/C++/WebServer/WebServer/base/LogStream.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/LogStream.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/LogStream.cpp.o.d"
-  "/mnt/d/ClionProject/C++/WebServer/WebServer/base/Logging.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/Logging.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/Logging.cpp.o.d"
-  "/mnt/d/ClionProject/C++/WebServer/WebServer/base/Thread.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/Thread.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/Thread.cpp.o.d"
+  "/mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/AsyncLogging.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/AsyncLogging.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/AsyncLogging.cpp.o.d"
+  "/mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/CountDownLatch.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/CountDownLatch.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/CountDownLatch.cpp.o.d"
+  "/mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/FileUtil.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/FileUtil.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/FileUtil.cpp.o.d"
+  "/mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/LogFile.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/LogFile.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/LogFile.cpp.o.d"
+  "/mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/LogStream.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/LogStream.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/LogStream.cpp.o.d"
+  "/mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/Logging.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/Logging.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/Logging.cpp.o.d"
+  "/mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/Thread.cpp" "WebServer/base/CMakeFiles/libserver_base.dir/Thread.cpp.o" "gcc" "WebServer/base/CMakeFiles/libserver_base.dir/Thread.cpp.o.d"
   )
 
 # Targets to which this target links.

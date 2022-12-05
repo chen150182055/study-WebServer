@@ -12,7 +12,7 @@ using namespace std;
 __thread EventLoop *t_loopInThisThread = 0;
 
 /**
- *
+ * 创建一个事件描述符
  * @return
  */
 int createEventfd() {
@@ -25,7 +25,7 @@ int createEventfd() {
 }
 
 /**
- *
+ * 构造函数,初始化本类中的成员
  */
 EventLoop::EventLoop()
 	: looping_(false),
@@ -35,7 +35,7 @@ EventLoop::EventLoop()
 	  eventHandling_(false),
 	  callingPendingFunctors_(false),
 	  threadId_(CurrentThread::tid()),
-	  pwakeupChannel_(new Channel(this, wakeupFd_)) {   //构造函数
+	  pwakeupChannel_(new Channel(this, wakeupFd_)) {
   if (t_loopInThisThread) {
 	// LOG << "Another EventLoop " << t_loopInThisThread << " exists in this
 	// thread " << threadId_;

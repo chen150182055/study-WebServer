@@ -4,7 +4,7 @@
 # compile CXX with g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/d/ClionProject/C++/WebServer/base
+CXX_INCLUDES = -I/mnt/c/Users/15018/CLionProjects/C++/WebServer/base
 
 CXX_FLAGS = -g -Wall -std=c++11 -D_PTHREADS -Wno-unused-parameter -O0
 

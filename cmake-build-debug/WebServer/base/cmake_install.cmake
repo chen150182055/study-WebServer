@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/d/ClionProject/C++/WebServer/WebServer/base
+# Install script for directory: /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,8 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/base/tests/cmake_install.cmake")
-
+  # Include the install script for the subdirectory.
+  include("/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/base/tests/cmake_install.cmake")
 endif()
 

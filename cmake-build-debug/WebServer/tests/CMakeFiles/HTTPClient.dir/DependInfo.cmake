@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/d/ClionProject/C++/WebServer/WebServer/tests/HTTPClient.cpp" "WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.o" "gcc" "WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.o.d"
+  "/mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/tests/HTTPClient.cpp" "WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.o" "gcc" "WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.o.d"
   )
 
 # Targets to which this target links.

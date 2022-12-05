@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/ClionProject/C++/WebServer
+CMAKE_SOURCE_DIR = /mnt/c/Users/15018/CLionProjects/C++/WebServer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/ClionProject/C++/WebServer/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/tests//CMakeFiles/progress.marks
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles 0
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/tests//CMakeFiles/progress.marks
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/clean
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/preinstall
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/preinstall
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 WebServer/tests/CMakeFiles/HTTPClient.dir/rule:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/CMakeFiles/HTTPClient.dir/rule
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/tests/CMakeFiles/HTTPClient.dir/rule
 .PHONY : WebServer/tests/CMakeFiles/HTTPClient.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ HTTPClient: WebServer/tests/CMakeFiles/HTTPClient.dir/rule
 
 # fast build rule for target.
 HTTPClient/fast:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/tests/CMakeFiles/HTTPClient.dir/build.make WebServer/tests/CMakeFiles/HTTPClient.dir/build
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/tests/CMakeFiles/HTTPClient.dir/build.make WebServer/tests/CMakeFiles/HTTPClient.dir/build
 .PHONY : HTTPClient/fast
 
 HTTPClient.o: HTTPClient.cpp.o
@@ -135,7 +135,7 @@ HTTPClient.o: HTTPClient.cpp.o
 
 # target to build an object file
 HTTPClient.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/tests/CMakeFiles/HTTPClient.dir/build.make WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/tests/CMakeFiles/HTTPClient.dir/build.make WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.o
 .PHONY : HTTPClient.cpp.o
 
 HTTPClient.i: HTTPClient.cpp.i
@@ -143,7 +143,7 @@ HTTPClient.i: HTTPClient.cpp.i
 
 # target to preprocess a source file
 HTTPClient.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/tests/CMakeFiles/HTTPClient.dir/build.make WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/tests/CMakeFiles/HTTPClient.dir/build.make WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.i
 .PHONY : HTTPClient.cpp.i
 
 HTTPClient.s: HTTPClient.cpp.s
@@ -151,7 +151,7 @@ HTTPClient.s: HTTPClient.cpp.s
 
 # target to generate assembly for a file
 HTTPClient.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/tests/CMakeFiles/HTTPClient.dir/build.make WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/tests/CMakeFiles/HTTPClient.dir/build.make WebServer/tests/CMakeFiles/HTTPClient.dir/HTTPClient.cpp.s
 .PHONY : HTTPClient.cpp.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

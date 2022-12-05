@@ -80,7 +80,7 @@ class EventLoop {
   std::vector<Functor> pendingFunctors_;
   bool callingPendingFunctors_;
   const pid_t threadId_;
-  shared_ptr<Channel> pwakeupChannel_;
+  shared_ptr<Channel> pwakeupChannel_;	//Channel对象的智能指针
 
   void wakeup();
   void handleRead();

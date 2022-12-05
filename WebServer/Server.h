@@ -26,7 +26,7 @@ class Server {		//定义Server类
   int threadNum_;	//线程数
   std::unique_ptr<EventLoopThreadPool> eventLoopThreadPool_;
   bool started_;	//线程状态
-  std::shared_ptr<Channel> acceptChannel_;
+  std::shared_ptr<Channel> acceptChannel_;	//Channel类型的智能指针
   int port_;		//端口号
   int listenFd_;	//监听的描述符
   static const int MAXFDS = 100000;		//静态成员,使用常量表达式进行初始化

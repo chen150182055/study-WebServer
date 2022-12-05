@@ -9,7 +9,7 @@
 #include "base/Logging.h"
 
 /**
- *
+ * 构造函数
  * @param loop
  * @param threadNum
  * @param port
@@ -17,8 +17,7 @@
 Server::Server(EventLoop *loop, int threadNum, int port)
 	: loop_(loop),
 	  threadNum_(threadNum),
-	  eventLoopThreadPool_(new EventLoopThreadPool(loop_,
-												   threadNum)),
+	  eventLoopThreadPool_(new EventLoopThreadPool(loop_,threadNum)),
 	  started_(false),
 	  acceptChannel_(new Channel(loop_)),
 	  port_(port),

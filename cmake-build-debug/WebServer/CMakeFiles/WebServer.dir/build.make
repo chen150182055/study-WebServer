@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/ClionProject/C++/WebServer
+CMAKE_SOURCE_DIR = /mnt/c/Users/15018/CLionProjects/C++/WebServer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/ClionProject/C++/WebServer/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include WebServer/CMakeFiles/WebServer.dir/depend.make
@@ -72,156 +72,156 @@ include WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o: ../WebServer/Channel.cpp
 WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o -MF CMakeFiles/WebServer.dir/Channel.cpp.o.d -o CMakeFiles/WebServer.dir/Channel.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/Channel.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o -MF CMakeFiles/WebServer.dir/Channel.cpp.o.d -o CMakeFiles/WebServer.dir/Channel.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Channel.cpp
 
 WebServer/CMakeFiles/WebServer.dir/Channel.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/Channel.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/Channel.cpp > CMakeFiles/WebServer.dir/Channel.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Channel.cpp > CMakeFiles/WebServer.dir/Channel.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/Channel.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/Channel.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/Channel.cpp -o CMakeFiles/WebServer.dir/Channel.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Channel.cpp -o CMakeFiles/WebServer.dir/Channel.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o: ../WebServer/Epoll.cpp
 WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o -MF CMakeFiles/WebServer.dir/Epoll.cpp.o.d -o CMakeFiles/WebServer.dir/Epoll.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/Epoll.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o -MF CMakeFiles/WebServer.dir/Epoll.cpp.o.d -o CMakeFiles/WebServer.dir/Epoll.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Epoll.cpp
 
 WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/Epoll.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/Epoll.cpp > CMakeFiles/WebServer.dir/Epoll.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Epoll.cpp > CMakeFiles/WebServer.dir/Epoll.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/Epoll.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/Epoll.cpp -o CMakeFiles/WebServer.dir/Epoll.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Epoll.cpp -o CMakeFiles/WebServer.dir/Epoll.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o: ../WebServer/EventLoop.cpp
 WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o -MF CMakeFiles/WebServer.dir/EventLoop.cpp.o.d -o CMakeFiles/WebServer.dir/EventLoop.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoop.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o -MF CMakeFiles/WebServer.dir/EventLoop.cpp.o.d -o CMakeFiles/WebServer.dir/EventLoop.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoop.cpp
 
 WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/EventLoop.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoop.cpp > CMakeFiles/WebServer.dir/EventLoop.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoop.cpp > CMakeFiles/WebServer.dir/EventLoop.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/EventLoop.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoop.cpp -o CMakeFiles/WebServer.dir/EventLoop.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoop.cpp -o CMakeFiles/WebServer.dir/EventLoop.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o: ../WebServer/EventLoopThread.cpp
 WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o -MF CMakeFiles/WebServer.dir/EventLoopThread.cpp.o.d -o CMakeFiles/WebServer.dir/EventLoopThread.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoopThread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o -MF CMakeFiles/WebServer.dir/EventLoopThread.cpp.o.d -o CMakeFiles/WebServer.dir/EventLoopThread.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoopThread.cpp
 
 WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/EventLoopThread.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoopThread.cpp > CMakeFiles/WebServer.dir/EventLoopThread.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoopThread.cpp > CMakeFiles/WebServer.dir/EventLoopThread.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/EventLoopThread.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoopThread.cpp -o CMakeFiles/WebServer.dir/EventLoopThread.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoopThread.cpp -o CMakeFiles/WebServer.dir/EventLoopThread.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o: ../WebServer/EventLoopThreadPool.cpp
 WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o -MF CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o.d -o CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoopThreadPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o -MF CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o.d -o CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoopThreadPool.cpp
 
 WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoopThreadPool.cpp > CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoopThreadPool.cpp > CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/EventLoopThreadPool.cpp -o CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/EventLoopThreadPool.cpp -o CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o: ../WebServer/HttpData.cpp
 WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o -MF CMakeFiles/WebServer.dir/HttpData.cpp.o.d -o CMakeFiles/WebServer.dir/HttpData.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/HttpData.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o -MF CMakeFiles/WebServer.dir/HttpData.cpp.o.d -o CMakeFiles/WebServer.dir/HttpData.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/HttpData.cpp
 
 WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/HttpData.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/HttpData.cpp > CMakeFiles/WebServer.dir/HttpData.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/HttpData.cpp > CMakeFiles/WebServer.dir/HttpData.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/HttpData.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/HttpData.cpp -o CMakeFiles/WebServer.dir/HttpData.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/HttpData.cpp -o CMakeFiles/WebServer.dir/HttpData.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/Main.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/Main.cpp.o: ../WebServer/Main.cpp
 WebServer/CMakeFiles/WebServer.dir/Main.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Main.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Main.cpp.o -MF CMakeFiles/WebServer.dir/Main.cpp.o.d -o CMakeFiles/WebServer.dir/Main.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/Main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Main.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Main.cpp.o -MF CMakeFiles/WebServer.dir/Main.cpp.o.d -o CMakeFiles/WebServer.dir/Main.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Main.cpp
 
 WebServer/CMakeFiles/WebServer.dir/Main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/Main.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/Main.cpp > CMakeFiles/WebServer.dir/Main.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Main.cpp > CMakeFiles/WebServer.dir/Main.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/Main.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/Main.cpp -o CMakeFiles/WebServer.dir/Main.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Main.cpp -o CMakeFiles/WebServer.dir/Main.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/Server.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/Server.cpp.o: ../WebServer/Server.cpp
 WebServer/CMakeFiles/WebServer.dir/Server.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Server.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Server.cpp.o -MF CMakeFiles/WebServer.dir/Server.cpp.o.d -o CMakeFiles/WebServer.dir/Server.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/Server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Server.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Server.cpp.o -MF CMakeFiles/WebServer.dir/Server.cpp.o.d -o CMakeFiles/WebServer.dir/Server.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Server.cpp
 
 WebServer/CMakeFiles/WebServer.dir/Server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/Server.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/Server.cpp > CMakeFiles/WebServer.dir/Server.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Server.cpp > CMakeFiles/WebServer.dir/Server.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/Server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/Server.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/Server.cpp -o CMakeFiles/WebServer.dir/Server.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Server.cpp -o CMakeFiles/WebServer.dir/Server.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o: ../WebServer/ThreadPool.cpp
 WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o -MF CMakeFiles/WebServer.dir/ThreadPool.cpp.o.d -o CMakeFiles/WebServer.dir/ThreadPool.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/ThreadPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o -MF CMakeFiles/WebServer.dir/ThreadPool.cpp.o.d -o CMakeFiles/WebServer.dir/ThreadPool.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/ThreadPool.cpp
 
 WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/ThreadPool.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/ThreadPool.cpp > CMakeFiles/WebServer.dir/ThreadPool.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/ThreadPool.cpp > CMakeFiles/WebServer.dir/ThreadPool.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/ThreadPool.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/ThreadPool.cpp -o CMakeFiles/WebServer.dir/ThreadPool.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/ThreadPool.cpp -o CMakeFiles/WebServer.dir/ThreadPool.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o: ../WebServer/Timer.cpp
 WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o -MF CMakeFiles/WebServer.dir/Timer.cpp.o.d -o CMakeFiles/WebServer.dir/Timer.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/Timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o -MF CMakeFiles/WebServer.dir/Timer.cpp.o.d -o CMakeFiles/WebServer.dir/Timer.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Timer.cpp
 
 WebServer/CMakeFiles/WebServer.dir/Timer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/Timer.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/Timer.cpp > CMakeFiles/WebServer.dir/Timer.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Timer.cpp > CMakeFiles/WebServer.dir/Timer.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/Timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/Timer.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/Timer.cpp -o CMakeFiles/WebServer.dir/Timer.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Timer.cpp -o CMakeFiles/WebServer.dir/Timer.cpp.s
 
 WebServer/CMakeFiles/WebServer.dir/Util.cpp.o: WebServer/CMakeFiles/WebServer.dir/flags.make
 WebServer/CMakeFiles/WebServer.dir/Util.cpp.o: ../WebServer/Util.cpp
 WebServer/CMakeFiles/WebServer.dir/Util.cpp.o: WebServer/CMakeFiles/WebServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Util.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Util.cpp.o -MF CMakeFiles/WebServer.dir/Util.cpp.o.d -o CMakeFiles/WebServer.dir/Util.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/Util.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object WebServer/CMakeFiles/WebServer.dir/Util.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/CMakeFiles/WebServer.dir/Util.cpp.o -MF CMakeFiles/WebServer.dir/Util.cpp.o.d -o CMakeFiles/WebServer.dir/Util.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Util.cpp
 
 WebServer/CMakeFiles/WebServer.dir/Util.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WebServer.dir/Util.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/Util.cpp > CMakeFiles/WebServer.dir/Util.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Util.cpp > CMakeFiles/WebServer.dir/Util.cpp.i
 
 WebServer/CMakeFiles/WebServer.dir/Util.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WebServer.dir/Util.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/Util.cpp -o CMakeFiles/WebServer.dir/Util.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/Util.cpp -o CMakeFiles/WebServer.dir/Util.cpp.s
 
 # Object files for target WebServer
 WebServer_OBJECTS = \
@@ -254,18 +254,18 @@ WebServer/WebServer: WebServer/CMakeFiles/WebServer.dir/Util.cpp.o
 WebServer/WebServer: WebServer/CMakeFiles/WebServer.dir/build.make
 WebServer/WebServer: WebServer/base/libserver_base.a
 WebServer/WebServer: WebServer/CMakeFiles/WebServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable WebServer"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/WebServer.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable WebServer"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/WebServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 WebServer/CMakeFiles/WebServer.dir/build: WebServer/WebServer
 .PHONY : WebServer/CMakeFiles/WebServer.dir/build
 
 WebServer/CMakeFiles/WebServer.dir/clean:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer && $(CMAKE_COMMAND) -P CMakeFiles/WebServer.dir/cmake_clean.cmake
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer && $(CMAKE_COMMAND) -P CMakeFiles/WebServer.dir/cmake_clean.cmake
 .PHONY : WebServer/CMakeFiles/WebServer.dir/clean
 
 WebServer/CMakeFiles/WebServer.dir/depend:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/d/ClionProject/C++/WebServer /mnt/d/ClionProject/C++/WebServer/WebServer /mnt/d/ClionProject/C++/WebServer/cmake-build-debug /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/CMakeFiles/WebServer.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/15018/CLionProjects/C++/WebServer /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/CMakeFiles/WebServer.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : WebServer/CMakeFiles/WebServer.dir/depend
 

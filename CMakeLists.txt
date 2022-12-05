@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.22.1)
 
 project(WebServer CXX)      #指定cmake工程名称为WebServer
 

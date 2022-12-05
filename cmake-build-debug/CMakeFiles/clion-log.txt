@@ -1,4 +1,4 @@
-C:\WINDOWS\system32\wsl.exe --distribution Ubuntu-22.04 --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd '/mnt/d/ClionProject/C++/WebServer/cmake-build-debug' && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S '/mnt/d/ClionProject/C++/WebServer' -B '/mnt/d/ClionProject/C++/WebServer/cmake-build-debug'; exitcode=$?; sleep 0.001; (exit $exitcode)"
+C:\Windows\system32\wsl.exe --distribution Ubuntu-22.04 --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd '/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug' && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S '/mnt/c/Users/15018/CLionProjects/C++/WebServer' -B '/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug'"
 CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 2.8.12 will be removed from a future version of
   CMake.
@@ -7,7 +7,7 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   CMake that the project does not need compatibility with older versions.
 
 
--- The CXX compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.3.0
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
 -- Check for working CXX compiler: /usr/bin/c++ - skipped
@@ -16,4 +16,4 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
 -- CXX_FLAGS = -g -Wall -std=c++11 -D_PTHREADS -Wno-unused-parameter -O0
 -- Configuring done
 -- Generating done
--- Build files have been written to: /mnt/d/ClionProject/C++/WebServer/cmake-build-debug
+-- Build files have been written to: /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug

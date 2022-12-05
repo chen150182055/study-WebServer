@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/ClionProject/C++/WebServer
+CMAKE_SOURCE_DIR = /mnt/c/Users/15018/CLionProjects/C++/WebServer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/ClionProject/C++/WebServer/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer//CMakeFiles/progress.marks
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles 0
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer//CMakeFiles/progress.marks
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/clean
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/preinstall
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/preinstall
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 WebServer/CMakeFiles/WebServer.dir/rule:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/CMakeFiles/WebServer.dir/rule
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 WebServer/CMakeFiles/WebServer.dir/rule
 .PHONY : WebServer/CMakeFiles/WebServer.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ WebServer: WebServer/CMakeFiles/WebServer.dir/rule
 
 # fast build rule for target.
 WebServer/fast:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/build
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/build
 .PHONY : WebServer/fast
 
 Channel.o: Channel.cpp.o
@@ -135,7 +135,7 @@ Channel.o: Channel.cpp.o
 
 # target to build an object file
 Channel.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Channel.cpp.o
 .PHONY : Channel.cpp.o
 
 Channel.i: Channel.cpp.i
@@ -143,7 +143,7 @@ Channel.i: Channel.cpp.i
 
 # target to preprocess a source file
 Channel.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Channel.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Channel.cpp.i
 .PHONY : Channel.cpp.i
 
 Channel.s: Channel.cpp.s
@@ -151,7 +151,7 @@ Channel.s: Channel.cpp.s
 
 # target to generate assembly for a file
 Channel.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Channel.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Channel.cpp.s
 .PHONY : Channel.cpp.s
 
 Epoll.o: Epoll.cpp.o
@@ -159,7 +159,7 @@ Epoll.o: Epoll.cpp.o
 
 # target to build an object file
 Epoll.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.o
 .PHONY : Epoll.cpp.o
 
 Epoll.i: Epoll.cpp.i
@@ -167,7 +167,7 @@ Epoll.i: Epoll.cpp.i
 
 # target to preprocess a source file
 Epoll.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.i
 .PHONY : Epoll.cpp.i
 
 Epoll.s: Epoll.cpp.s
@@ -175,7 +175,7 @@ Epoll.s: Epoll.cpp.s
 
 # target to generate assembly for a file
 Epoll.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Epoll.cpp.s
 .PHONY : Epoll.cpp.s
 
 EventLoop.o: EventLoop.cpp.o
@@ -183,7 +183,7 @@ EventLoop.o: EventLoop.cpp.o
 
 # target to build an object file
 EventLoop.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.o
 .PHONY : EventLoop.cpp.o
 
 EventLoop.i: EventLoop.cpp.i
@@ -191,7 +191,7 @@ EventLoop.i: EventLoop.cpp.i
 
 # target to preprocess a source file
 EventLoop.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.i
 .PHONY : EventLoop.cpp.i
 
 EventLoop.s: EventLoop.cpp.s
@@ -199,7 +199,7 @@ EventLoop.s: EventLoop.cpp.s
 
 # target to generate assembly for a file
 EventLoop.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoop.cpp.s
 .PHONY : EventLoop.cpp.s
 
 EventLoopThread.o: EventLoopThread.cpp.o
@@ -207,7 +207,7 @@ EventLoopThread.o: EventLoopThread.cpp.o
 
 # target to build an object file
 EventLoopThread.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.o
 .PHONY : EventLoopThread.cpp.o
 
 EventLoopThread.i: EventLoopThread.cpp.i
@@ -215,7 +215,7 @@ EventLoopThread.i: EventLoopThread.cpp.i
 
 # target to preprocess a source file
 EventLoopThread.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.i
 .PHONY : EventLoopThread.cpp.i
 
 EventLoopThread.s: EventLoopThread.cpp.s
@@ -223,7 +223,7 @@ EventLoopThread.s: EventLoopThread.cpp.s
 
 # target to generate assembly for a file
 EventLoopThread.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThread.cpp.s
 .PHONY : EventLoopThread.cpp.s
 
 EventLoopThreadPool.o: EventLoopThreadPool.cpp.o
@@ -231,7 +231,7 @@ EventLoopThreadPool.o: EventLoopThreadPool.cpp.o
 
 # target to build an object file
 EventLoopThreadPool.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.o
 .PHONY : EventLoopThreadPool.cpp.o
 
 EventLoopThreadPool.i: EventLoopThreadPool.cpp.i
@@ -239,7 +239,7 @@ EventLoopThreadPool.i: EventLoopThreadPool.cpp.i
 
 # target to preprocess a source file
 EventLoopThreadPool.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.i
 .PHONY : EventLoopThreadPool.cpp.i
 
 EventLoopThreadPool.s: EventLoopThreadPool.cpp.s
@@ -247,7 +247,7 @@ EventLoopThreadPool.s: EventLoopThreadPool.cpp.s
 
 # target to generate assembly for a file
 EventLoopThreadPool.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/EventLoopThreadPool.cpp.s
 .PHONY : EventLoopThreadPool.cpp.s
 
 HttpData.o: HttpData.cpp.o
@@ -255,7 +255,7 @@ HttpData.o: HttpData.cpp.o
 
 # target to build an object file
 HttpData.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.o
 .PHONY : HttpData.cpp.o
 
 HttpData.i: HttpData.cpp.i
@@ -263,7 +263,7 @@ HttpData.i: HttpData.cpp.i
 
 # target to preprocess a source file
 HttpData.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.i
 .PHONY : HttpData.cpp.i
 
 HttpData.s: HttpData.cpp.s
@@ -271,7 +271,7 @@ HttpData.s: HttpData.cpp.s
 
 # target to generate assembly for a file
 HttpData.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/HttpData.cpp.s
 .PHONY : HttpData.cpp.s
 
 Main.o: Main.cpp.o
@@ -279,7 +279,7 @@ Main.o: Main.cpp.o
 
 # target to build an object file
 Main.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Main.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Main.cpp.o
 .PHONY : Main.cpp.o
 
 Main.i: Main.cpp.i
@@ -287,7 +287,7 @@ Main.i: Main.cpp.i
 
 # target to preprocess a source file
 Main.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Main.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Main.cpp.i
 .PHONY : Main.cpp.i
 
 Main.s: Main.cpp.s
@@ -295,7 +295,7 @@ Main.s: Main.cpp.s
 
 # target to generate assembly for a file
 Main.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Main.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
 Server.o: Server.cpp.o
@@ -303,7 +303,7 @@ Server.o: Server.cpp.o
 
 # target to build an object file
 Server.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Server.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Server.cpp.o
 .PHONY : Server.cpp.o
 
 Server.i: Server.cpp.i
@@ -311,7 +311,7 @@ Server.i: Server.cpp.i
 
 # target to preprocess a source file
 Server.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Server.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Server.cpp.i
 .PHONY : Server.cpp.i
 
 Server.s: Server.cpp.s
@@ -319,7 +319,7 @@ Server.s: Server.cpp.s
 
 # target to generate assembly for a file
 Server.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Server.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Server.cpp.s
 .PHONY : Server.cpp.s
 
 ThreadPool.o: ThreadPool.cpp.o
@@ -327,7 +327,7 @@ ThreadPool.o: ThreadPool.cpp.o
 
 # target to build an object file
 ThreadPool.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.o
 .PHONY : ThreadPool.cpp.o
 
 ThreadPool.i: ThreadPool.cpp.i
@@ -335,7 +335,7 @@ ThreadPool.i: ThreadPool.cpp.i
 
 # target to preprocess a source file
 ThreadPool.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.i
 .PHONY : ThreadPool.cpp.i
 
 ThreadPool.s: ThreadPool.cpp.s
@@ -343,7 +343,7 @@ ThreadPool.s: ThreadPool.cpp.s
 
 # target to generate assembly for a file
 ThreadPool.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/ThreadPool.cpp.s
 .PHONY : ThreadPool.cpp.s
 
 Timer.o: Timer.cpp.o
@@ -351,7 +351,7 @@ Timer.o: Timer.cpp.o
 
 # target to build an object file
 Timer.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Timer.cpp.o
 .PHONY : Timer.cpp.o
 
 Timer.i: Timer.cpp.i
@@ -359,7 +359,7 @@ Timer.i: Timer.cpp.i
 
 # target to preprocess a source file
 Timer.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Timer.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Timer.cpp.i
 .PHONY : Timer.cpp.i
 
 Timer.s: Timer.cpp.s
@@ -367,7 +367,7 @@ Timer.s: Timer.cpp.s
 
 # target to generate assembly for a file
 Timer.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Timer.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Timer.cpp.s
 .PHONY : Timer.cpp.s
 
 Util.o: Util.cpp.o
@@ -375,7 +375,7 @@ Util.o: Util.cpp.o
 
 # target to build an object file
 Util.cpp.o:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Util.cpp.o
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Util.cpp.o
 .PHONY : Util.cpp.o
 
 Util.i: Util.cpp.i
@@ -383,7 +383,7 @@ Util.i: Util.cpp.i
 
 # target to preprocess a source file
 Util.cpp.i:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Util.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Util.cpp.i
 .PHONY : Util.cpp.i
 
 Util.s: Util.cpp.s
@@ -391,7 +391,7 @@ Util.s: Util.cpp.s
 
 # target to generate assembly for a file
 Util.cpp.s:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Util.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(MAKE) $(MAKESILENT) -f WebServer/CMakeFiles/WebServer.dir/build.make WebServer/CMakeFiles/WebServer.dir/Util.cpp.s
 .PHONY : Util.cpp.s
 
 # Help Target
@@ -447,6 +447,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -9,12 +9,18 @@
 #include <iostream>
 using namespace std;
 
+/**
+ *
+ */
 void threadFunc() {
   for (int i = 0; i < 100000; ++i) {
 	LOG << i;
   }
 }
 
+/**
+ *
+ */
 void type_test() {
   // 13 lines
   cout << "----------type test-----------" << endl;
@@ -33,6 +39,9 @@ void type_test() {
   LOG << string("This is a string");
 }
 
+/**
+ *
+ */
 void stressing_single_thread() {
   // 100000 lines
   cout << "----------stressing test single thread-----------" << endl;
@@ -41,6 +50,10 @@ void stressing_single_thread() {
   }
 }
 
+/**
+ *
+ * @param threadNum
+ */
 void stressing_multi_threads(int threadNum = 4) {
   // threadNum * 100000 lines
   cout << "----------stressing test multi thread-----------" << endl;
@@ -55,6 +68,9 @@ void stressing_multi_threads(int threadNum = 4) {
   sleep(3);
 }
 
+/**
+ *
+ */
 void other() {
   // 1 line
   cout << "----------other test-----------" << endl;

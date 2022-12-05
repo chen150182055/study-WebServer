@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/d/ClionProject/C++/WebServer/WebServer/tests
+# Install script for directory: /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

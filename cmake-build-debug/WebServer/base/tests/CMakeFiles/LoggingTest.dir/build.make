@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/ClionProject/C++/WebServer
+CMAKE_SOURCE_DIR = /mnt/c/Users/15018/CLionProjects/C++/WebServer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/ClionProject/C++/WebServer/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include WebServer/base/tests/CMakeFiles/LoggingTest.dir/depend.make
@@ -72,16 +72,16 @@ include WebServer/base/tests/CMakeFiles/LoggingTest.dir/flags.make
 WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o: WebServer/base/tests/CMakeFiles/LoggingTest.dir/flags.make
 WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o: ../WebServer/base/tests/LoggingTest.cpp
 WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o: WebServer/base/tests/CMakeFiles/LoggingTest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/base/tests && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o -MF CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o.d -o CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o -c /mnt/d/ClionProject/C++/WebServer/WebServer/base/tests/LoggingTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/base/tests && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o -MF CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o.d -o CMakeFiles/LoggingTest.dir/LoggingTest.cpp.o -c /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/tests/LoggingTest.cpp
 
 WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LoggingTest.dir/LoggingTest.cpp.i"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/base/tests && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/d/ClionProject/C++/WebServer/WebServer/base/tests/LoggingTest.cpp > CMakeFiles/LoggingTest.dir/LoggingTest.cpp.i
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/base/tests && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/tests/LoggingTest.cpp > CMakeFiles/LoggingTest.dir/LoggingTest.cpp.i
 
 WebServer/base/tests/CMakeFiles/LoggingTest.dir/LoggingTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LoggingTest.dir/LoggingTest.cpp.s"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/base/tests && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/d/ClionProject/C++/WebServer/WebServer/base/tests/LoggingTest.cpp -o CMakeFiles/LoggingTest.dir/LoggingTest.cpp.s
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/base/tests && g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/tests/LoggingTest.cpp -o CMakeFiles/LoggingTest.dir/LoggingTest.cpp.s
 
 # Object files for target LoggingTest
 LoggingTest_OBJECTS = \
@@ -94,18 +94,18 @@ WebServer/base/tests/LoggingTest: WebServer/base/tests/CMakeFiles/LoggingTest.di
 WebServer/base/tests/LoggingTest: WebServer/base/tests/CMakeFiles/LoggingTest.dir/build.make
 WebServer/base/tests/LoggingTest: WebServer/base/libserver_base.a
 WebServer/base/tests/LoggingTest: WebServer/base/tests/CMakeFiles/LoggingTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/d/ClionProject/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable LoggingTest"
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/base/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LoggingTest.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable LoggingTest"
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/base/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LoggingTest.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 WebServer/base/tests/CMakeFiles/LoggingTest.dir/build: WebServer/base/tests/LoggingTest
 .PHONY : WebServer/base/tests/CMakeFiles/LoggingTest.dir/build
 
 WebServer/base/tests/CMakeFiles/LoggingTest.dir/clean:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/base/tests && $(CMAKE_COMMAND) -P CMakeFiles/LoggingTest.dir/cmake_clean.cmake
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/base/tests && $(CMAKE_COMMAND) -P CMakeFiles/LoggingTest.dir/cmake_clean.cmake
 .PHONY : WebServer/base/tests/CMakeFiles/LoggingTest.dir/clean
 
 WebServer/base/tests/CMakeFiles/LoggingTest.dir/depend:
-	cd /mnt/d/ClionProject/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/d/ClionProject/C++/WebServer /mnt/d/ClionProject/C++/WebServer/WebServer/base/tests /mnt/d/ClionProject/C++/WebServer/cmake-build-debug /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/base/tests /mnt/d/ClionProject/C++/WebServer/cmake-build-debug/WebServer/base/tests/CMakeFiles/LoggingTest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/15018/CLionProjects/C++/WebServer /mnt/c/Users/15018/CLionProjects/C++/WebServer/WebServer/base/tests /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/base/tests /mnt/c/Users/15018/CLionProjects/C++/WebServer/cmake-build-debug/WebServer/base/tests/CMakeFiles/LoggingTest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : WebServer/base/tests/CMakeFiles/LoggingTest.dir/depend
 
