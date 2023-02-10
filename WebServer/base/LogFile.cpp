@@ -9,9 +9,10 @@
 using namespace std;
 
 /**
- *
- * @param basename
- * @param flushEveryN
+ * 构造函数实例化了一个文件追加类AppendFile，
+ * 将写入的日志保存到文件中
+ * @param basename 文件路径
+ * @param flushEveryN 每写入N行日志就清空缓存
  */
 LogFile::LogFile(const string &basename, int flushEveryN)
 	: basename_(basename),
@@ -28,17 +29,17 @@ LogFile::LogFile(const string &basename, int flushEveryN)
 LogFile::~LogFile() {}
 
 /**
- *
+ * 将日志写入文件中
  * @param logline
  * @param len
  */
 void LogFile::append(const char *logline, int len) {
-  MutexLockGuard lock(*mutex_);
+  MutexLockGuard lock(*mutex_);	//使用互斥锁保护
   append_unlocked(logline, len);
 }
 
 /**
- *
+ * 清空文件缓存
  */
 void LogFile::flush() {
   MutexLockGuard lock(*mutex_);
@@ -46,7 +47,7 @@ void LogFile::flush() {
 }
 
 /**
- *
+ * 更新文件缓存并写入到文件中
  * @param logline
  * @param len
  */

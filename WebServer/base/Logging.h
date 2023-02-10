@@ -14,10 +14,17 @@ class Logger {
  public:
   Logger(const char *fileName, int line);
   ~Logger();
-  LogStream &stream() { return impl_.stream_; }
 
   /**
-   * 将成员logFileName_的值设置为fileName
+   * 返回日志流
+   * @return
+   */
+  LogStream &stream() {
+	return impl_.stream_;
+  }
+
+  /**
+   * 用于设置日志文件的名称
    * @param fileName
    */
   static void setLogFileName(std::string fileName) {
@@ -25,7 +32,7 @@ class Logger {
   }
 
   /**
-   * 返回成员logFileName_的值
+   * 获取日志文件的名称
    * @return
    */
   static std::string getLogFileName() {
@@ -33,6 +40,7 @@ class Logger {
   }
 
  private:
+  //该类实现日志记录的功能
   class Impl {
    public:
 	Impl(const char *fileName, int line);
@@ -43,7 +51,8 @@ class Logger {
 	std::string basename_;
   };
   Impl impl_;
-  static std::string logFileName_;
+  static std::string logFileName_;	//存储日志文件的名称
 };
 
+//宏定义LOG，可以方便地获取日志流
 #define LOG Logger(__FILE__, __LINE__).stream()

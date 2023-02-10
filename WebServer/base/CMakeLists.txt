@@ -8,9 +8,9 @@ set(LIB_SRC
     Thread.cpp
 )   #设置LIB_SRC变量的值
 
-add_library(libserver_base ${LIB_SRC})  #生成一个名为libserver_base的库
-target_link_libraries(libserver_base pthread rt)    #指定链接给定目标和/或其依赖项时要使用的库
+add_library(libserver_base ${LIB_SRC})              #构建一个名为libserver_base的库,包含一系列源文件
+target_link_libraries(libserver_base pthread rt)    #将pthread和rt库链接到该库上
 
-set_target_properties(libserver_base PROPERTIES OUTPUT_NAME "server_base")  #设置libserver_base的属性
+set_target_properties(libserver_base PROPERTIES OUTPUT_NAME "server_base")  #将该库的输出名称设置为server_base
 
-add_subdirectory(tests) #在构建中添加一个子目录
+add_subdirectory(tests)                             #添加一个名为tests的子目录到构建中

@@ -12,6 +12,7 @@ const int kLargeBuffer = 4000 * 1000;
 
 template <int SIZE>
 
+//保存日志信息
 class FixedBuffer : noncopyable {
  public:
   FixedBuffer() : cur_(data_) {}

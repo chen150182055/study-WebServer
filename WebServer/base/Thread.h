@@ -17,9 +17,26 @@ class Thread : noncopyable {    //定义Thread类
   ~Thread();
   void start();
   int join();
-  bool started() const { return started_; }
-  pid_t tid() const { return tid_; }
-  const std::string &name() const { return name_; }
+
+  bool started() const {
+	return started_;
+  }
+
+  /**
+   * 于获取线程的线程ID
+   * @return
+   */
+  pid_t tid() const {
+	return tid_;
+  }
+
+  /**
+   * 获取线程的名字
+   * @return
+   */
+  const std::string &name() const {
+	return name_;
+  }
 
  private:
   void setDefaultName();

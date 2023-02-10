@@ -9,6 +9,8 @@
 
 // TODO 提供自动归档功能
 //LogFile进一步封装FileUtil.h
+//于将日志记录到文件中，它继承了noncopyable类,
+// noncopyable类用于禁止拷贝构造函数和赋值操作符
 class LogFile : noncopyable {
  public:
   // 每被append flushEveryN次，flush一下，会往文件写，只不过，文件也是带缓冲区的
