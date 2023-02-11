@@ -23,44 +23,50 @@ const int EPOLLWAIT_TIME = 10000;
 typedef shared_ptr<Channel> SP_Channel;
 
 /**
- *
+ * 构造函数
  */
 Epoll::Epoll() : epollFd_(epoll_create1(EPOLL_CLOEXEC)), events_(EVENTSNUM) {	//
   assert(epollFd_ > 0);
 }
 
 /**
- *
+ * 析构函数
  */
 Epoll::~Epoll() {}
 
 /**
- *
+ * 向Epoll中添加新的文件描述符
  * @param request
  * @param timeout
  */
 // 注册新描述符
 void Epoll::epoll_add(SP_Channel request, int timeout) {	//
-  int fd = request->getFd();
-  if (timeout > 0) {
-    add_timer(request, timeout);
-    fd2http_[fd] = request->getHolder();
+  int fd = request->getFd();				//从Channel中获取文件描述符
+  if (timeout > 0) {						//如果timeout大于0
+    add_timer(request, timeout);	//则为该文件描述符添加超时定时器
+    fd2http_[fd] = request->getHolder();	//将文件描述符与其相应的HttpData对象存储到映射容器fd2http_中
   }
+  //创建一个epoll_event结构体并将文件描述符赋值给其data.fd
   struct epoll_event event;
   event.data.fd = fd;
+  //将Channel中获取的事件类型赋值给其events
   event.events = request->getEvents();
 
+  //更新Channel中的lastEvents_
   request->EqualAndUpdateLastEvents();
 
+  //将文件描述符与对应的Channel对象存储到映射容器fd2chan_中
   fd2chan_[fd] = request;
-  if (epoll_ctl(epollFd_, EPOLL_CTL_ADD, fd, &event) < 0) {	//
+  //并使用epoll_ctl函数将文件描述符添加到Epoll中
+  if (epoll_ctl(epollFd_, EPOLL_CTL_ADD, fd, &event) < 0) {
+	//如果失败则报错并将映射容器中的Channel对象释放
     perror("epoll_add error");
     fd2chan_[fd].reset();
   }
 }
 
 /**
- *
+ * 修改某个文件描述符在epoll中的事件触发方式
  * @param request
  * @param timeout
  */

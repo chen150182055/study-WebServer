@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <string>
 
+//一些工具函数
 ssize_t readn(int fd, void *buff, size_t n);
 ssize_t readn(int fd, std::string &inBuffer, bool &zero);
 ssize_t readn(int fd, std::string &inBuffer);

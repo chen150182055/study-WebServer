@@ -12,11 +12,12 @@
 class EventLoop;    //声明EventLoop
 class HttpData;        //声明HttpData
 
-class Channel {        //定义Channel类
- private:            //私有成员
-  typedef std::function<void()> CallBack;    //
-  EventLoop *loop_;        //一个指向EventLoop对象的指针
-  int fd_;                //描述符
+//用于处理文件描述符上的事件
+class Channel {
+ private:
+  typedef std::function<void()> CallBack;
+  EventLoop *loop_;
+  int fd_;
   __uint32_t events_;
   __uint32_t revents_;
   __uint32_t lastEvents_;
@@ -42,15 +43,15 @@ class Channel {        //定义Channel类
   void setFd(int fd);            //设置描述符函数
 
   /**
-   *
+   * 用来设置holder_
    * @param holder
    */
   void setHolder(std::shared_ptr<HttpData> holder) {
-	holder_ = holder;
+	holder_ = holder;	//holder_是一个指向HttpData的shared_ptr智能指针
   }
 
   /**
-   *
+   * 从holder_中获取一个std::shared_ptr对象
    * @return
    */
   std::shared_ptr<HttpData> getHolder() {
@@ -59,7 +60,8 @@ class Channel {        //定义Channel类
   }
 
   /**
-   *
+   * 接受一个右值引用类型的参数readHandler，
+   * 并将它赋值给readHandler_变量
    * @param readHandler
    */
   void setReadHandler(CallBack &&readHandler) {
@@ -67,7 +69,8 @@ class Channel {        //定义Channel类
   }
 
   /**
-   *
+   * 接受一个CallBack类型的右值引用参数writeHandler，
+   * 并将其赋值给writeHandler_成员变量
    * @param writeHandler
    */
   void setWriteHandler(CallBack &&writeHandler) {
@@ -91,7 +94,7 @@ class Channel {        //定义Channel类
   }
 
   /**
-   *
+   * 处理事件
    */
   void handleEvents() {
 	events_ = 0;

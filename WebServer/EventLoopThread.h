@@ -7,8 +7,8 @@
 #include "base/Thread.h"
 #include "base/noncopyable.h"
 
-
-class EventLoopThread : noncopyable {
+//用于创建线程和EventLoop的类
+class EventLoopThread : noncopyable {	//继承自noncopyable类，表示不能被复制
  public:
   EventLoopThread();
   ~EventLoopThread();

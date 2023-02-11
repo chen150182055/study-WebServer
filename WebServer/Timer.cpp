@@ -6,12 +6,12 @@
 #include <queue>
 
 /**
- *
+ * 构造函数
  * @param requestData
  * @param timeout
  */
 TimerNode::TimerNode(std::shared_ptr<HttpData> requestData, int timeout)
-    : deleted_(false), SPHttpData(requestData) {    //构造函数,初始化一个timeval类型的结构变量。同时初始化两个类成员
+    : deleted_(false), SPHttpData(requestData) {    //初始化了类成员deleted_和SPHttpData
   struct timeval now;
   gettimeofday(&now, NULL);	//获取当前时区和时间并填入now
   // 以毫秒计
@@ -19,7 +19,7 @@ TimerNode::TimerNode(std::shared_ptr<HttpData> requestData, int timeout)
 }
 
 /**
- *
+ * 调用SPHttpData对象的handleClose()函数来处理关闭操作
  */
 TimerNode::~TimerNode() {    //析构函数
   if (SPHttpData)
@@ -27,61 +27,63 @@ TimerNode::~TimerNode() {    //析构函数
 }
 
 /**
- *
+ * 构造函数
  * @param tn
  */
 TimerNode::TimerNode(TimerNode &tn)
     : SPHttpData(tn.SPHttpData), expiredTime_(0) {}
 
 /**
- *
+ * 更新计时器节点的过期时间 expiredTime_
  * @param timeout
  */
 void TimerNode::update(int timeout) {    //
   struct timeval now;
+  //使用gettimeofday函数获取当前的系统时间
   gettimeofday(&now, NULL);
-  expiredTime_ =
-      (((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000)) + timeout;
+  //把timeout与当前时间相加，最后将结果赋给expiredTime_
+  expiredTime_ = (((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000)) + timeout;
 }
 
 /**
- *
+ * 判断定时器是否超时
  * @return
  */
 bool TimerNode::isValid() {		//
   struct timeval now;
   gettimeofday(&now, NULL);
   size_t temp = (((now.tv_sec % 10000) * 1000) + (now.tv_usec / 1000));
+  //比较当前系统时间和定时器超时时间
   if (temp < expiredTime_)
-    return true;
+    return true;		//定时器没有超时
   else {
-    this->setDeleted();
-    return false;
+    this->setDeleted();	//设置定时器为已删除状态
+    return false;		//定时器已超时
   }
 }
 
 /**
- *
+ * 清除请求
  */
 void TimerNode::clearReq() {	//
-  SPHttpData.reset();
-  this->setDeleted();
+  SPHttpData.reset();	//将SPHttpData重置
+  this->setDeleted();	//将TimerNode状态设置为已删除
 }
 
 /**
- *
+ * 构造函数
  */
 TimerManager::TimerManager() {}
 
 /**
- *
+ * 析构函数
  */
 TimerManager::~TimerManager() {}
 
 /**
- *
- * @param SPHttpData
- * @param timeout
+ * 向TimerManager中添加定时器
+ * @param SPHttpData 指向HttpData的智能指针
+ * @param timeout 超时时间
  */
 void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout) {	//
   SPTimerNode new_node(new TimerNode(SPHttpData, timeout));
@@ -103,16 +105,19 @@ void TimerManager::addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout) {
 */
 
 /**
- *
+ * 从定时器管理器（TimerManager）对象的定时器节点队列（timerNodeQueue）
+ * 中清除已过期或已删除的定时器节点（SPTimerNode）
  */
 void TimerManager::handleExpiredEvent() {	//
   // MutexLockGuard locker(lock);
+  //使用while循环从定时器节点队列中取出定时器节点
   while (!timerNodeQueue.empty()) {
     SPTimerNode ptimer_now = timerNodeQueue.top();
+	//如果该定时器节点已经过期或已被删除
     if (ptimer_now->isDeleted())
-      timerNodeQueue.pop();
+      timerNodeQueue.pop();	//从队列中清除该定时器节点
     else if (ptimer_now->isValid() == false)
-      timerNodeQueue.pop();
+      timerNodeQueue.pop();	//从队列中清除该定时器节点
     else
       break;
   }

@@ -12,7 +12,8 @@
 
 class HttpData;		//声明HttpData类使其可见
 
-class TimerNode {		//定义TimerNode类
+//定时器节点类，用于记录超时时间
+class TimerNode {
  public:
   TimerNode(std::shared_ptr<HttpData> requestData, int timeout);
   ~TimerNode();
@@ -30,19 +31,21 @@ class TimerNode {		//定义TimerNode类
   std::shared_ptr<HttpData> SPHttpData;
 };
 
-struct TimerCmp {			//定义TimerCmp类
+//imerCmp类是一个比较器类，重载了>操作符，用于比较两个节点的超时时间
+struct TimerCmp {
   bool operator()(std::shared_ptr<TimerNode> &a,
                   std::shared_ptr<TimerNode> &b) const {
     return a->getExpTime() > b->getExpTime();
   }
 };
 
-class TimerManager {		//定义TimerManager类
+//定时器管理器类
+class TimerManager {
  public:
   TimerManager();
   ~TimerManager();
   void addTimer(std::shared_ptr<HttpData> SPHttpData, int timeout);
-  void handleExpiredEvent();
+  void handleExpiredEvent();	//处理超时事件
 
  private:
   typedef std::shared_ptr<TimerNode> SPTimerNode;

@@ -7,7 +7,7 @@
 #include "base/Logging.h"
 #include "base/noncopyable.h"
 
-
+//事件循环检查池类
 class EventLoopThreadPool : noncopyable {
  public:
   EventLoopThreadPool(EventLoop* baseLoop, int numThreads);	//构造函数声明

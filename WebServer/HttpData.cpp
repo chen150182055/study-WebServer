@@ -105,26 +105,28 @@ void MimeType::init() {   //
 }
 
 /**
- *
+ * 根据文件后缀名返回对应的MIME类型
  * @param suffix
  * @return
  */
-std::string MimeType::getMime(const std::string &suffix) {    //
+std::string MimeType::getMime(const std::string &suffix) {
+  //调用pthread_once函数，保证MimeType::init函数只被调用一次
   pthread_once(&once_control, MimeType::init);
+  //检查mime映射表中是否有指定后缀名的MIME类型
   if (mime.find(suffix) == mime.end())
-    return mime["default"];
+    return mime["default"];	//返回该MIME类型
   else
-    return mime[suffix];
+    return mime[suffix];	//返回默认的MIME类型
 }
 
 /**
- *
+ * 构造函数
  * @param loop
  * @param connfd
  */
 HttpData::HttpData(EventLoop *loop, int connfd)
     : loop_(loop),
-      channel_(new Channel(loop, connfd)),
+      channel_(new Channel(loop, connfd)),	//创建channel对象，并将channel注册到loop中
       fd_(connfd),
       error_(false),
       connectionState_(H_CONNECTED),
@@ -133,8 +135,9 @@ HttpData::HttpData(EventLoop *loop, int connfd)
       nowReadPos_(0),
       state_(STATE_PARSE_URI),
       hState_(H_START),
-      keepAlive_(false) {   //构造函数
+      keepAlive_(false) {   //初始化类成员变量
   // loop_->queueInLoop(bind(&HttpData::setHandlers, this));
+  //设置读写回调，以及conn回调
   channel_->setReadHandler(bind(&HttpData::handleRead, this));
   channel_->setWriteHandler(bind(&HttpData::handleWrite, this));
   channel_->setConnHandler(bind(&HttpData::handleConn, this));
@@ -172,23 +175,25 @@ void HttpData::seperateTimer() {    //
 }
 
 /**
- *
+ * 处理读事件
  */
 void HttpData::handleRead() {   //
-  __uint32_t &events_ = channel_->getEvents();
+  __uint32_t &events_ = channel_->getEvents();	//获取事件
   do {
     bool zero = false;
+	//调用readn函数,读取数据到inbuffer_中,read_num返回读取到的字节数
     int read_num = readn(fd_, inBuffer_, zero);
-    LOG << "Request: " << inBuffer_;
-    if (connectionState_ == H_DISCONNECTING) {
-      inBuffer_.clear();
+    LOG << "Request: " << inBuffer_;	//打印请求
+
+    if (connectionState_ == H_DISCONNECTING) {	//如果正在断开连接
+      inBuffer_.clear();	//清空inBuffer_
       break;
     }
     // cout << inBuffer_ << endl;
-    if (read_num < 0) {
+    if (read_num < 0) {		//读取失败
       perror("1");
-      error_ = true;
-      handleError(fd_, 400, "Bad Request");
+      error_ = true;		//设置错误标志
+      handleError(fd_, 400, "Bad Request");	//处理错误
       break;
     }
     // else if (read_num == 0)
@@ -201,7 +206,7 @@ void HttpData::handleRead() {   //
       // Aborted，或者来自网络的数据没有达到等原因
       // 最可能是对端已经关闭了，统一按照对端已经关闭处理
       // error_ = true;
-      connectionState_ = H_DISCONNECTING;
+      connectionState_ = H_DISCONNECTING;	//设置连接状态为正在断开连接
       if (read_num == 0) {
         // error_ = true;
         break;
@@ -209,11 +214,11 @@ void HttpData::handleRead() {   //
       // cout << "readnum == 0" << endl;
     }
 
-    if (state_ == STATE_PARSE_URI) {
-      URIState flag = this->parseURI();
-      if (flag == PARSE_URI_AGAIN)
+    if (state_ == STATE_PARSE_URI) {	//如果当前状态是解析URI
+      URIState flag = this->parseURI();	//调用parseURI解析
+      if (flag == PARSE_URI_AGAIN)		//如果解析失败
         break;
-      else if (flag == PARSE_URI_ERROR) {
+      else if (flag == PARSE_URI_ERROR) {	//如果解析错误
         perror("2");
         LOG << "FD = " << fd_ << "," << inBuffer_ << "******";
         inBuffer_.clear();
@@ -240,7 +245,7 @@ void HttpData::handleRead() {   //
         state_ = STATE_ANALYSIS;
       }
     }
-    if (state_ == STATE_RECV_BODY) {
+    if (state_ == STATE_RECV_BODY) {	//
       int content_length = -1;
       if (headers_.find("Content-length") != headers_.end()) {
         content_length = stoi(headers_["Content-length"]);
@@ -290,24 +295,29 @@ void HttpData::handleRead() {   //
 }
 
 /**
- *
+ * 处理HttpData的写操作
  */
-void HttpData::handleWrite() {    //
+void HttpData::handleWrite() {
+  //检查是否发生错误,并且检查连接是否断开
   if (!error_ && connectionState_ != H_DISCONNECTED) {
+	//继续进行写操作
     __uint32_t &events_ = channel_->getEvents();
+	//如果写操作失败，它将设置错误标志
     if (writen(fd_, outBuffer_) < 0) {
       perror("writen");
       events_ = 0;
       error_ = true;
     }
+	//如果缓冲区内仍然有数据，它将设置EPOLLOUT事件
     if (outBuffer_.size() > 0) events_ |= EPOLLOUT;
   }
 }
 
 /**
- *
+ * 处理连接,根据不同的情况设置文件描述符及超时时间,以及关闭连接
  */
-void HttpData::handleConn() {   //
+void HttpData::handleConn() {
+  //分离定时器
   seperateTimer();
   __uint32_t &events_ = channel_->getEvents();
   if (!error_ && connectionState_ == H_CONNECTED) {
@@ -336,17 +346,18 @@ void HttpData::handleConn() {   //
       int timeout = (DEFAULT_KEEP_ALIVE_TIME >> 1);
       loop_->updatePoller(channel_, timeout);
     }
-  } else if (!error_ && connectionState_ == H_DISCONNECTING &&
-             (events_ & EPOLLOUT)) {
+  } else if (!error_ && connectionState_ == H_DISCONNECTING && (events_ & EPOLLOUT)) {
     events_ = (EPOLLOUT | EPOLLET);
   } else {
     // cout << "close with errors" << endl;
+	//调用handleClose关闭连接
     loop_->runInLoop(bind(&HttpData::handleClose, shared_from_this()));
   }
 }
 
 /**
- *
+ * 解析URI的函数
+ * 从inBuffer_中取出请求行，解析出请求的方法、文件名和HTTP版本号，并存入相应的变量
  * @return
  */
 URIState HttpData::parseURI() {   //
@@ -363,6 +374,7 @@ URIState HttpData::parseURI() {   //
     str = str.substr(pos + 1);
   else
     str.clear();
+
   // Method
   int posGet = request_line.find("GET");
   int posPost = request_line.find("POST");
@@ -406,6 +418,7 @@ URIState HttpData::parseURI() {   //
     pos = _pos;
   }
   // cout << "fileName_: " << fileName_ << endl;
+
   // HTTP 版本号
   pos = request_line.find("/", pos);
   if (pos < 0)
@@ -427,7 +440,7 @@ URIState HttpData::parseURI() {   //
 }
 
 /**
- *
+ * 解析HTTP请求头，并将解析结果存储到headers_中
  * @return
  */
 HeaderState HttpData::parseHeaders() {    //
@@ -436,8 +449,9 @@ HeaderState HttpData::parseHeaders() {    //
   int now_read_line_begin = 0;
   bool notFinish = true;
   size_t i = 0;
+  //每次循环会根据当前状态来判断当前字符的含义,并做出相应的动作,如记录起止位置、更新状态等
   for (; i < str.size() && notFinish; ++i) {
-    switch (hState_) {
+    switch (hState_) {	//使用hState_表示当前状态
       case H_START: {
         if (str[i] == '\n' || str[i] == '\r') break;
         hState_ = H_KEY;
@@ -510,6 +524,7 @@ HeaderState HttpData::parseHeaders() {    //
       }
     }
   }
+  //当hState_被更新为H_END_LF时，表示解析成功
   if (hState_ == H_END_LF) {
     str = str.substr(i);
     return PARSE_HEADER_SUCCESS;
@@ -519,11 +534,13 @@ HeaderState HttpData::parseHeaders() {    //
 }
 
 /**
- *
+ * 处理客户端发送过来的HTTP请求，并返回一个AnalysisState类型的状态
  * @return
  */
-AnalysisState HttpData::analysisRequest() {   //
+AnalysisState HttpData::analysisRequest() {
+  //通过判断请求方法（method_）是否为METHOD_POST来决定执行的处理逻辑
   if (method_ == METHOD_POST) {
+	//如果是METHOD_POST请求，则需要对客户端发送的图像进行拼接，然后将结果返回给客户端
     // ------------------------------------------------------
     // My CV stitching handler which requires OpenCV library
     // ------------------------------------------------------
@@ -548,6 +565,7 @@ AnalysisState HttpData::analysisRequest() {   //
     // outBuffer_ += header + string(data_encode.begin(), data_encode.end());
     // inBuffer_ = inBuffer_.substr(length);
     // return ANALYSIS_SUCCESS;
+	//如果请求方法是METHOD_GET或METHOD_HEAD，则根据文件名确定文件类型，并打开文件进行读取
   } else if (method_ == METHOD_GET || method_ == METHOD_HEAD) {
     string header;
     header += "HTTP/1.1 200 OK\r\n";
@@ -583,6 +601,7 @@ AnalysisState HttpData::analysisRequest() {   //
       return ANALYSIS_SUCCESS;
     }
 
+	//如果文件不存在，则会调用handleError函数并返回错误状态，否则返回成功状态
     struct stat sbuf;
     if (stat(fileName_.c_str(), &sbuf) < 0) {
       header.clear();
@@ -622,7 +641,12 @@ AnalysisState HttpData::analysisRequest() {   //
 }
 
 /**
- *
+ * 网页错误处理
+ * 将传入的参数err_num和short_msg,
+ * 拼接在body_buff中生成html的body,
+ * 将错误码和提示信息保存在header_buff中,
+ * 最后使用sprintf函数将header_buff和body_buff拼接在一起,
+ * 通过fd写入send_buff中，以便在浏览器中呈现出错误信息
  * @param fd
  * @param err_num
  * @param short_msg
@@ -651,16 +675,16 @@ void HttpData::handleError(int fd, int err_num, string short_msg) {   //
 }
 
 /**
- *
+ * 处理HttpData的连接关闭
  */
-void HttpData::handleClose() {    //
-  connectionState_ = H_DISCONNECTED;
-  shared_ptr<HttpData> guard(shared_from_this());
-  loop_->removeFromPoller(channel_);
+void HttpData::handleClose() {
+  connectionState_ = H_DISCONNECTED;				//表示连接断开状态
+  shared_ptr<HttpData> guard(shared_from_this());	//拷贝当前对象的智能指针
+  loop_->removeFromPoller(channel_);		//从Poller中移除channel_
 }
 
 /**
- *
+ * 新建事件
  */
 void HttpData::newEvent() {   //
   channel_->setEvents(DEFAULT_EVENT);
